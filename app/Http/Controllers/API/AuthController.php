@@ -20,7 +20,7 @@ class AuthController extends Controller
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' => 'NDjXdpvHhTQp4BEkeJRGT87D9wuMx2w97IK2jL8d',
+            'client_secret' => '2f1431QdIeqTS4IgvJHFJcveDJHDEJ7Yk2qyPxwr',
             'username' => request('email'),
             'password' => request('password'),
             
@@ -37,6 +37,10 @@ class AuthController extends Controller
             'status' => 200
         ]);
         //return response()->json(['status' => 201]);
+    }
+    public function index(){
+         $users = User::all();
+        return $users;
     }
     public function login()
     {
@@ -71,7 +75,7 @@ class AuthController extends Controller
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' => 'NDjXdpvHhTQp4BEkeJRGT87D9wuMx2w97IK2jL8d',
+            'client_secret' => '2f1431QdIeqTS4IgvJHFJcveDJHDEJ7Yk2qyPxwr',
             'username' => request('username'),
             'password' => request('password'),
             

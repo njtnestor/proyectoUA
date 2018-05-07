@@ -7,6 +7,14 @@
 import router from './routes.js';
 import VueRouter from 'vue-router';
 import Api from './api.js';
+import Auth from './auth.js';
+
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue'
+import VeeValidate from 'vee-validate';
+
+Vue.use(BootstrapVue);
+Vue.use(VeeValidate);
 
 window.api = new Api();
 require('./bootstrap');
@@ -16,7 +24,7 @@ Vue.use(VueRouter);
 window.Event = new Vue;
 
 
-import Auth from './auth.js';
+
 
 window.auth =  new Auth();
 

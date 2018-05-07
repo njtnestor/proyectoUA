@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);/*!
+/*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -10386,6 +10386,11 @@ a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #dee2e6 !important;
   }
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(/fonts/ayar_juno.ttf?8149af94572f3c609b7354ed71715036);
 }
 
 .navbar-laravel {

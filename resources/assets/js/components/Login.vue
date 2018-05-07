@@ -1,20 +1,9 @@
 <template>
-    <div>
-        <h1>Login</h1>
-
-        <p>
-            <label for="username">Email</label>
-
-            <input type="text" name="username" v-model="username">
-        </p>
-
-        <p>
-            <label for="password">Password</label>
-
-            <input type="password" name="password" v-model="password">
-        </p>
-
-        <button @click="login">Login</button>
+    <div class="login">
+        <h1>Inicia sesion</h1>
+        <input type="text" class="form-control" placeholder="Introduce email" name="username" v-model="username">
+        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" v-model="password">
+        <button @click="login" class="btn btn-primary submit">Iniciar sesión</button>
     </div>
 </template>
 
@@ -46,3 +35,20 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .form-control{
+        margin-bottom:20px;
+    }
+    .login{
+        box-shadow: 0 0 0 1px #eaeaea;
+        padding: 32px;
+        max-width: 340px;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .submit{
+        width: 100%;
+    }
+</style>
+

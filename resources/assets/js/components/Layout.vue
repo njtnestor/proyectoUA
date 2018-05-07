@@ -1,23 +1,39 @@
 <template>
+    
     <div>
-        <div>
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
-            <router-link to="/dashboard">Dashboard</router-link>
-        </div>
-        <div v-if="authenticated && user">
-            <p>Hello, {{ user.name }}</p>
-            <button @click="logout">Logout</button>
-            
-        </div>
-        <div v-else>
-            <router-link to="/login" >Login</router-link>
-            <router-link to="/registro" >Registro</router-link>
-        </div>
-        
+        <b-navbar toggleable="md" type="light" variant="info">
+            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+            <b-navbar-brand href="#"><router-link class="nav-link hom" to="/">DatFood</router-link></b-navbar-brand>
+            <b-collapse is-nav id="nav_collapse">
+                <b-navbar-nav>
+                  <b-nav-item ><router-link class="nav-link nav-links" to="/dashboard">Dashboard</router-link></b-nav-item>
+                  <b-nav-item><router-link class="nav-link nav-links" to="/about">About</router-link></b-nav-item>
+                </b-navbar-nav>
+                <!-- Right aligned nav items -->
+                <b-navbar-nav class="ml-auto">
+                    <div v-if="authenticated && user">
+                        <b-nav-item-dropdown right>
+                        <!-- Using button-content slot -->
+                            <template slot="button-content">
+                                <em>{{ user.name }}</em>
+                            </template>
+                            <b-dropdown-item href="#">Profile</b-dropdown-item>
+                            <b-dropdown-item @click="logout">Signout</b-dropdown-item>
+                        </b-nav-item-dropdown>
+                    </div>
+                    <div v-else>
+                        <b-navbar-nav>
+                            <b-nav-item><router-link class="nav-link nav-links" to="/login" >Login</router-link></b-nav-item>
+                            <b-nav-item ><router-link class="nav-link nav-links" to="/registro" >Registro</router-link></b-nav-item>
+                        </b-navbar-nav>
+                    </div>
+                </b-navbar-nav>
 
-        <div style="margin-top: 2rem">
-            <router-view></router-view>
+              </b-collapse>
+        </b-navbar>
+        
+        <div>
+            <router-view ></router-view>
         </div>
     </div>
 </template>
@@ -28,6 +44,7 @@
             return {
                 authenticated: auth.check(),
                 user: auth.user
+                
             };
         },
         methods: {
@@ -42,7 +59,7 @@
                 })            
             }
         },
-        mounted() {
+        beforeMount() {
             Event.$on('userLoggedIn', () => {
                 this.authenticated = true;
                 this.user = auth.user;
@@ -50,3 +67,21 @@
         },
     }
 </script>
+<style>
+
+    .hom{
+        color: red;
+        font-family: myFirstFont;
+        font-size: 29px;
+        height: 44px; 
+        margin-top: -19px;
+    }
+    .nav-links{
+        color:rgb(161, 161, 161) !important;
+        font-size: 15px;
+    }
+    .bg-info{
+        background-color: white !important;;
+    }
+
+</style>

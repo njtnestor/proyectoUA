@@ -21,7 +21,8 @@ let routes = [
         path: '/dashboard',
         component: require('./components/Dashboard.vue'),
         meta: { middlewareAuth: true }
-    }
+    }    
+
 ];
 
 /*export default new VueRouter({
