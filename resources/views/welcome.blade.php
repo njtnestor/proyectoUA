@@ -11,7 +11,7 @@
     </head>
     <body>
         <div id="app">
-            <vue-layout :key="$route.fullPath"></vue-layout>
+            <vue-layout></vue-layout>
         </div>
 
         <script src="/js/app.js"></script>

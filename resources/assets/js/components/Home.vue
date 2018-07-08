@@ -6,6 +6,22 @@
             </strong>
             <Buscador/>
         </div>
+        <div class="row correctrow">
+            <div class="col">
+                <img class="img-center" src="/images/cuchillo-tenedor.png" alt="">
+                <h1>Crea</h1>
+            </div>
+            <div class="col">
+                <img class="img-center" src="/images/pollo.png" alt="">
+                <h1>Cocina</h1>
+            </div>
+            <div class="col">
+                <img class="img-center" src="/images/pizza.png" alt="">
+                <h1>Prueba</h1>
+            </div>
+
+        </div>
+        
          
    </div>
 </template>
@@ -17,7 +33,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
     .fondoBuscador{
         height: 500px;
        /* background-image: url(http://franchisesouq.com/files/equipment/5a093473e8777_CB_-_prosciutto-pesto-panini-4_copy.jpg);*/
@@ -34,6 +50,29 @@ export default {
         font-size: 5.125rem;
         display: inline-block;
     }
-    
+    .fila{
+        padding-top:60px;
+    }
+    h1{
+        text-align: center;
+        color: red;
+        font-family: myFirstFont;
+        font-size: 29px;
+    }
+    .row{
+        padding-top: 40px;
+        margin-right: 0;
+    }
+    .img-center{
+        display: block;
+        margin: 0 auto;
+
+    }
+    .clase1{
+        color:red;
+    }
+    .clase2{
+        color:blue;
+    }
 </style>
 

@@ -1,39 +1,51 @@
 <template>
     <div class="bordebuscador">
-        <div class="input-group mb-3">
-            <b-form-input class="search" v-model="search" type="text" placeholder="Enter your name"></b-form-input>              
+        <div class="input-group mb-3" v-on-clickaway.native="away" @click="clickinput">
+            <b-form-input class="search" @keyup.native="elegir2()" v-model="search" type="text" placeholder="Enter a product"></b-form-input>              
             <div class="input-group-append pp">
                 <button class="btn btn-primary submit boton">Enter</button>
             </div>
-            <ul v-show="search.length>2 && enc==true"  class="listabusqueda ">
-                <li class="everysearch" v-for="(i,index) in filtrado()" :key="index" >{{i.name}}</li> 
+            <ul v-show="search.length>2 && enc==true && choosed==false && inputclicked==true"  class="listabusqueda ">
+                <li class="everysearch" v-for="(i,index) in filtrado()" @click="elegir(i)" :key="index" >{{i.name}}({{i.marca}})</li> 
             </ul>
         </div>
     </div>
 
 </template>
 <script>
+import { directive as onClickaway } from 'vue-clickaway';
 export default {
+    
     name: "Buscador",
     data(){
         return {
+            inputclicked: false,
+            choosed: false,
             enc: false,
             arrayaux: [],
             search: '',
-            array: [{name: 'nestor'},{name: 'nestitor'},{name:'pepenes'},{name: 'tocnestpp'},{name: 'maria'}]
+            array: []
         };
     },
+      directives: {
+    onClickaway: onClickaway,
+  },
     methods:{
         filtrado: function(){
             
             if(this.search.length>2){
 
                 //return this.array.filter(i=>i.name.includes(this.search))
-                var a= this.myfilter(i=>i.name.includes(this.search),this.array)
+                var a= this.myfilter(i=>i.name.toLowerCase().includes(this.search.toLowerCase()),this.array)
                 this.enc=a.length>0;
-                console.log(a.length)
                 return a;
             }
+        },
+        away: function(){
+            this.inputclicked=false;
+        },
+        clickinput: function(){
+            this.inputclicked=true;
         },
         myfilter(f,arr){
             var auxarr=[]
@@ -49,11 +61,36 @@ export default {
                 
             }
             return auxarr
+        },
+        elegir(i){
+            console.log("entra")
+            this.search=i.name
+            this.choosed=true;
+        },
+        elegir2(){
+            this.choosed=false;
+            console.log("patata")
         }
+    },
+    beforeMount() {
+        axios.get('/api/products')
+                .then(({data}) => {
+                    
+                    this.array=data.data
+                    console.log(data.data)
+                    console.log(this.array)
+                    //auth.login(data.token, data.user);
+                    //this.$router.push('/dashboard');
+                })
+                
     }
+    
 }
 </script>
-<style>
+<style scoped>
+    .form-control:focus {
+        -webkit-box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+    }
     .bordebuscador{
         padding: 10px;
         border-radius: 4px;
@@ -79,21 +116,26 @@ export default {
     .listabusqueda{
         color: #495057;
         background-color: #fff;
-        border: 2px solid #80bdff;
-        border-color: #80bdff;
         outline: 0;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
         margin-top: 2px;
         border-top: none;
-        width: 421px;
+        width: 420px;
         list-style-type: none;
         padding: 0;
         background-color: white;
+        box-shadow: 0 2px 5px #9b9b9b;
     }
     .everysearch{
+        padding-left: 16px;
+        cursor: pointer;
         text-align: left;
-        border-bottom: 1px solid#80bdff;
+        border-bottom: 1px solid #eaeaea;
+        text-transform: capitalize;
+    }
+    .everysearch:hover{
+        background-color: rgb(220,220,220);
     }
     .everysearch:last-child{
         border-bottom: none;

@@ -18,6 +18,11 @@ let routes = [
         component: require('./components/Registro.vue')
     },
     {
+        path: '/profile',
+        component: require('./components/Profile.vue'),
+        meta: { middlewareAuth: true }
+    },
+    {
         path: '/dashboard',
         component: require('./components/Dashboard.vue'),
         meta: { middlewareAuth: true }
@@ -34,7 +39,9 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.middlewareAuth)) {                
+
         if (!auth.check()) {
+
             next({
                 path: '/login',
                 query: { redirect: to.fullPath }

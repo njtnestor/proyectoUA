@@ -3,21 +3,34 @@
         <h1>Inicia sesion</h1>
         <input type="text" class="form-control" placeholder="Introduce email" name="username" v-model="username">
         <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" v-model="password">
-        <button @click="login" class="btn btn-primary submit">Iniciar sesión</button>
+        <button-spinner v-on:click.native="login" class="btn btn-primary "
+	        :is-loading="isLoading" 
+	        :status="status">
+            Iniciar sesión
+	        
+        </button-spinner>
+
     </div>
 </template>
 
 <script>
+
+import ButtonSpinner from 'vue-button-spinner';
 export default {
+    components: {
+        ButtonSpinner
+    },
     data() {
         return {
             username: '',
             password: '',
+            isLoading: false,
+			status: '',
         };
     },
-
     methods: {
         login() {
+            this.isLoading=true
             let data = {
                 username: this.username,
                 password: this.password
@@ -25,14 +38,18 @@ export default {
 
             axios.post('/api/login', data)
                 .then(({data}) => {
+                    
+                    //this.status=false
                     auth.login(data.token, data.user);
-                    this.$router.push('/dashboard');
+                    this.$router.push('/');
                 })
-                .catch(({response}) => {                    
+                .catch(({response}) => {   
+                    this.isLoading= false,                 
                     alert(response.data.message);
                 });
         }
-    }
+    },
+
 }
 </script>
 <style scoped>
@@ -49,6 +66,9 @@ export default {
     }
     .submit{
         width: 100%;
+        color: #fff !important;
+        background-color: #0069d9 !important;
+        border-color: #007bff !important;
     }
 </style>
 

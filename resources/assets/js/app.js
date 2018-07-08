@@ -9,12 +9,16 @@ import VueRouter from 'vue-router';
 import Api from './api.js';
 import Auth from './auth.js';
 
+
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue'
 import VeeValidate from 'vee-validate';
+import Vueclickaway from 'vue-clickaway';
+
 
 Vue.use(BootstrapVue);
 Vue.use(VeeValidate);
+Vue.use(Vueclickaway);
 
 window.api = new Api();
 require('./bootstrap');

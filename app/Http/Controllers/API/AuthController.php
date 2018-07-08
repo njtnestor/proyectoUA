@@ -20,7 +20,7 @@ class AuthController extends Controller
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' => '2f1431QdIeqTS4IgvJHFJcveDJHDEJ7Yk2qyPxwr',
+            'client_secret' =>  env('CLIENT_SECRET'),
             'username' => request('email'),
             'password' => request('password'),
             
@@ -75,7 +75,7 @@ class AuthController extends Controller
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' => '2f1431QdIeqTS4IgvJHFJcveDJHDEJ7Yk2qyPxwr',
+            'client_secret' => env('CLIENT_SECRET'),
             'username' => request('username'),
             'password' => request('password'),
             

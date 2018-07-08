@@ -17,7 +17,9 @@
                             <template slot="button-content">
                                 <em>{{ user.name }}</em>
                             </template>
-                            <b-dropdown-item href="#">Profile</b-dropdown-item>
+                            <b-dropdown-item to="/profile">Profile</b-dropdown-item>
+                            <b-dropdown-item href="#">New product</b-dropdown-item>
+                            <b-dropdown-item href="#">New recipe</b-dropdown-item>
                             <b-dropdown-item @click="logout">Signout</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </div>
@@ -60,14 +62,16 @@
             }
         },
         beforeMount() {
+            console.log("antes de montar")
             Event.$on('userLoggedIn', () => {
+                console.log("Entraantesdemontar")
                 this.authenticated = true;
                 this.user = auth.user;
             });
         },
     }
 </script>
-<style>
+<style scoped>
 
     .hom{
         color: red;
@@ -77,11 +81,11 @@
         margin-top: -19px;
     }
     .nav-links{
-        color:rgb(161, 161, 161) !important;
+       
         font-size: 15px;
     }
     .bg-info{
-        background-color: white !important;;
+        background-color: white !important;
     }
 
 </style>
