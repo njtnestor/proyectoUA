@@ -23,6 +23,11 @@ let routes = [
         meta: { middlewareAuth: true }
     },
     {
+        path: '/newProduct',
+        component: require('./components/ProductCreate.vue'),
+        meta: { middlewareAuth: true }
+    },
+    {
         path: '/dashboard',
         component: require('./components/Dashboard.vue'),
         meta: { middlewareAuth: true }
