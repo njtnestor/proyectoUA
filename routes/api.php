@@ -26,9 +26,13 @@ Route::get('/users','API\AuthController@index');
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', 'API\AuthController@logout');
     Route::get('/get-user', 'API\AuthController@getUser');
-    Route::get('/prueba', 'API\ProductController@prueba');
+   // Route::get('/prueba', 'API\ProductController@prueba');
     Route::resource('products', 'API\ProductController');
 });
 Route::resource('products', 'API\ProductController')->only([
+    'index', 'show'
+]);
+Route::resource('recipes', 'API\RecipeController')->only([
     'index'
 ]);
+Route::get('products/{id}/recipes','API\RecipeController@indexByProductId');

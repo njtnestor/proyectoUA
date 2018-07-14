@@ -3,6 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Product as ProductResource;
+use App\Http\Resources\User as UserResource;
 
 class Recipe extends JsonResource
 {
@@ -14,6 +16,18 @@ class Recipe extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        //return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'serving' => $this->serving,
+            'description' => $this->description,
+            'votes_p' => $this->votes_p,
+            'votes_n' => $this->votes_n,
+            'rating' => $this->rating,
+            'user'=> new UserResource($this->user),
+            'product_id' => $this->product_id,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

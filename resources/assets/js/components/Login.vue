@@ -3,7 +3,7 @@
         <h1>Inicia sesion</h1>
         <input type="text" class="form-control" placeholder="Introduce email" name="username" v-model="username">
         <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" v-model="password">
-        <button-spinner v-on:click.native="login" class="btn btn-primary "
+        <button-spinner v-on:click.native="login" class="btn btn-primary submit"
 	        :is-loading="isLoading" 
 	        :status="status">
             Iniciar sesión
@@ -67,7 +67,7 @@ export default {
     .submit{
         width: 100%;
         color: #fff !important;
-        background-color: #0069d9 !important;
+        background-color: #007bff !important;
         border-color: #007bff !important;
     }
 </style>

@@ -10,6 +10,9 @@ class Product extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function recipes(){
+        return $this->hasMany('App\Recipe');
+    }
     /*public function users_pivot(){
         return $this->belongsToMany('App\User','recipes');
 

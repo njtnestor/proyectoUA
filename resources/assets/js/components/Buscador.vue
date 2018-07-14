@@ -3,7 +3,8 @@
         <div class="input-group mb-3" v-on-clickaway.native="away" @click="clickinput">
             <b-form-input class="search" @keyup.native="elegir2()" v-model="search" type="text" placeholder="Enter a product"></b-form-input>              
             <div class="input-group-append pp">
-                <button class="btn btn-primary submit boton">Enter</button>
+                <!--<button class="btn btn-primary submit boton">Enter</button>-->
+                <b-button class="btn btn-primary submit boton" :to="{name: 'productRecipes', params: { id : idSearch}}">Enter</b-button>
             </div>
             <ul v-show="search.length>2 && enc==true && choosed==false && inputclicked==true"  class="listabusqueda ">
                 <li class="everysearch" v-for="(i,index) in filtrado()" @click="elegir(i)" :key="index" >{{i.name}}({{i.marca}})</li> 
@@ -24,6 +25,7 @@ export default {
             enc: false,
             arrayaux: [],
             search: '',
+            idSearch: '',
             array: []
         };
     },
@@ -65,6 +67,7 @@ export default {
         elegir(i){
             console.log("entra")
             this.search=i.name
+            this.idSearch=i.id
             this.choosed=true;
         },
         elegir2(){
@@ -112,6 +115,8 @@ export default {
     }
     .boton{
         width: 140px;
+        background-color: #007bff !important;
+        border-color: #007bff !important;
     }
     .listabusqueda{
         color: #495057;

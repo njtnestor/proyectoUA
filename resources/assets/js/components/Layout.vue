@@ -26,7 +26,7 @@
                     <div v-else>
                         <b-navbar-nav>
                             <b-nav-item><router-link class="nav-link nav-links" to="/login" >Login</router-link></b-nav-item>
-                            <b-nav-item ><router-link class="nav-link nav-links" to="/registro" >Registro</router-link></b-nav-item>
+                            <b-nav-item ><router-link class="nav-link nav-links" to="/registro" >Sign up</router-link></b-nav-item>
                         </b-navbar-nav>
                     </div>
                 </b-navbar-nav>

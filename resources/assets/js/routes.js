@@ -7,6 +7,7 @@ let routes = [
     },
     {
         path: '/about',
+        name: 'about',
         component: require('./components/About.vue')
     },
     {
@@ -18,6 +19,11 @@ let routes = [
         component: require('./components/Registro.vue')
     },
     {
+        path:'/product/:id/recipes',
+        name: 'productRecipes',
+        component: require('./components/ProductRecipes.vue')
+    },
+    {
         path: '/profile',
         component: require('./components/Profile.vue'),
         meta: { middlewareAuth: true }
@@ -27,6 +33,7 @@ let routes = [
         component: require('./components/ProductCreate.vue'),
         meta: { middlewareAuth: true }
     },
+    
     {
         path: '/dashboard',
         component: require('./components/Dashboard.vue'),

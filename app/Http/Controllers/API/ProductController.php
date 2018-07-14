@@ -17,7 +17,10 @@ class ProductController extends Controller
     public function index() {
         return ProductResource::collection(Product::get());
     }
-
+    public function show($id){
+      return new ProductResource(Product::find($id));
+     //return Product::find($id)
+    }
     public function store(Request $request)
     {
       $product = Product::create([

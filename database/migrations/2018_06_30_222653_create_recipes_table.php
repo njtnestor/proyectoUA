@@ -16,13 +16,15 @@ class CreateRecipesTable extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('serving');
-            $table->integer('description');
-            $table->integer('votes_p');
-            $table->integer('votes_n');
+            $table->string('description');
+            $table->integer('votes_p')->default(0);
+            $table->integer('votes_n')->default(0);
+            $table->integer('rating')->default(0);
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('product_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->unique(["user_id", "product_id"], 'uq_columns');
             $table->timestamps();
         });
     }

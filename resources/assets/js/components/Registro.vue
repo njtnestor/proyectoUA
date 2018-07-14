@@ -1,24 +1,24 @@
 <template>
     <div class="login">
         <b-form @submit.prevent="validateBeforeSubmit" v-if="!formSubmitted">
-            <h1>Registro</h1>
+            <h1>Register</h1>
             <div class="form-group" :class="{'has-error': errors.has('name') }" >
-                <input type="text" v-validate="'required|alpha|min:3'" class="form-control" placeholder="Introduce nombre" name="name" v-model="name">
+                <input type="text" v-validate="'required|alpha|min:3'" class="form-control" placeholder="Enter name" name="name" v-model="name">
                 <p class="text-danger" v-if="errors.has('name')">{{ errors.first('name') }}</p>
             </div>
             <div class="form-group" :class="{'has-error': errors.has('email') }" >
-                <input type="text" v-validate="'required|email'" class="form-control" placeholder="Introduce email" name="email" v-model="email">
+                <input type="text" v-validate="'required|email'" class="form-control" placeholder="Enter email" name="email" v-model="email">
                 <p class="text-danger" v-if="errors.has('email')">{{ errors.first('email') }}</p>
             </div>
             <div class="form-group" :class="{'has-error': errors.has('password') }" >
-                <input type="password" v-validate="'required|min:3'" class="form-control" placeholder="Introduce constraseña" name="password" v-model="password">
+                <input type="password" v-validate="'required|min:3'" class="form-control" placeholder="Enter password" name="password" v-model="password">
                 <p class="text-danger" v-if="errors.has('password')">{{ errors.first('password') }}</p>
             </div> 
             <div class="form-group" :class="{'has-error': errors.has('password_confirmation') }" >   
-                <input type="password" v-validate="'required|confirmed:password'" class="form-control" placeholder="Confirma constraseña" name="password_confirmation">
+                <input type="password" v-validate="'required|confirmed:password'" class="form-control" placeholder="Enter password" name="password_confirmation">
                 <p class="text-danger" v-if="errors.has('password_confirmation')">{{ "Las contraseñas no coinciden" }}</p>
             </div>
-            <button class="btn btn-primary submit" @click="registro()">Crear cuenta</button>
+            <button class="btn btn-primary submit" @click="registro()">Sign up</button>
         </b-form>
     </div>
 </template>
@@ -64,6 +64,10 @@ export default {
 }
 </script>
 <style>
+    h1{
+        text-align: center;
+        margin-bottom:20px;
+    }
     .form-control{
         margin-bottom:20px;
     }
