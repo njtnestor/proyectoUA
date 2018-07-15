@@ -12,10 +12,12 @@ let routes = [
     },
     {
         path: '/login',
+        name: 'login',
         component: require('./components/Login.vue')
     },
     {
         path: '/registro',
+        name: 'registro',
         component: require('./components/Registro.vue')
     },
     {
@@ -25,17 +27,20 @@ let routes = [
     },
     {
         path: '/profile',
+        name: 'profile',
         component: require('./components/Profile.vue'),
         meta: { middlewareAuth: true }
     },
     {
         path: '/newProduct',
+        name: 'newProduct',
         component: require('./components/ProductCreate.vue'),
         meta: { middlewareAuth: true }
     },
     
     {
         path: '/dashboard',
+        name: 'dashboard',
         component: require('./components/Dashboard.vue'),
         meta: { middlewareAuth: true }
     }    

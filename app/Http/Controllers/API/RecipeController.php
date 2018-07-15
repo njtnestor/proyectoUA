@@ -16,14 +16,11 @@ class RecipeController extends Controller
         return RecipeResource::collection(Recipe::get());
     }
     public function indexByProductId($id) {
-
-        $recipes=Product::find($id)->recipes()->paginate(5);
-     
+        $recipes=Product::find($id)->recipes()->paginate(5); 
         return RecipeResource::collection($recipes);
-
-
-
-        /*$recipes = Product::find($id)->recipes;
-        return $recipes;*/
+    }
+    public function showOutstanding($id) {
+        $recipes=Product::find($id)->recipes()->orderBy('rating','desc')->first();      
+        return new RecipeResource($recipes);
     }
 }

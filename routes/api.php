@@ -36,3 +36,4 @@ Route::resource('recipes', 'API\RecipeController')->only([
     'index'
 ]);
 Route::get('products/{id}/recipes','API\RecipeController@indexByProductId');
+Route::get('products/{id}/recipes/outstanding','API\RecipeController@showOutstanding');
