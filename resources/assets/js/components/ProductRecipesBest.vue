@@ -73,7 +73,10 @@ export default {
         font-size: 80px;
     }
     .row-gen{
-        margin-top:20px;
+        margin-top:40px;
+        box-shadow: 0 0 0 2px #eaeaea;
+    }
+    .col2bor{
         box-shadow: 0 0 0 2px #eaeaea;
     }
     .img-center{

@@ -34997,7 +34997,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row correctrow" }, [
+    return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col" }, [
         _c("img", {
           staticClass: "img-center",
@@ -76334,7 +76334,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n.border[data-v-33070b1e]{\n    background-color: red;\n}\nh1[data-v-33070b1e]{\n    padding-top: 10px;\n    font-size: 80px;\n}\n.row-gen[data-v-33070b1e]{\n    margin-top:20px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-33070b1e]{\n    \n    /*width: 360px;*/\n    height: 340px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.row .flex[data-v-33070b1e] {\n display: -webkit-inline-box;\n display: -ms-inline-flexbox;\n display: inline-flex;\n width: 100%;\n}\nh1[data-v-33070b1e]{\n    font-size:5vw;\n}\nh3[data-v-33070b1e]{\n    font-size:2vw;\n}\n", ""]);
+exports.push([module.i, "\n.border[data-v-33070b1e]{\n    background-color: red;\n}\nh1[data-v-33070b1e]{\n    padding-top: 10px;\n    font-size: 80px;\n}\n.row-gen[data-v-33070b1e]{\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.col2bor[data-v-33070b1e]{\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-33070b1e]{\n    \n    /*width: 360px;*/\n    height: 340px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.row .flex[data-v-33070b1e] {\n display: -webkit-inline-box;\n display: -ms-inline-flexbox;\n display: inline-flex;\n width: 100%;\n}\nh1[data-v-33070b1e]{\n    font-size:5vw;\n}\nh3[data-v-33070b1e]{\n    font-size:2vw;\n}\n", ""]);
 
 // exports
 
@@ -76611,7 +76611,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n.row-gen[data-v-6b9f7f62]{\n    margin: 80px;\n    margin-top:100px;\n    /*margin-top:20px;*/\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-6b9f7f62]{\n    \n    /*width: 360px;*/\n    height: 300px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n", ""]);
+exports.push([module.i, "\n.row-gen[data-v-6b9f7f62]{\n    margin: 80px;\n    margin-top:40px;\n    margin-bottom: 0px;\n    /*margin-top:20px;*/\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.pagination[data-v-6b9f7f62]{\n    margin-top: 10px;\n    margin-left: 80px;\n    margin-right: 80px;\n}\n.img-center[data-v-6b9f7f62]{\n    /*width: 360px;*/\n    height: 300px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.everyelem[data-v-6b9f7f62]{\n    display: block;\n    margin: 0 auto;\n}\n\n", ""]);
 
 // exports
 
@@ -76660,6 +76660,21 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -76667,6 +76682,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         return {
 
             recipes: null,
+            pagination: {
+                //last_page:null,
+                current_page: 2,
+                first_page_url: null,
+                next_page_url: null,
+                prev_page_url: null,
+                last_page_url: null,
+                per_p: null,
+                total_r: null
+            },
             imgURL1: 'http://pizzerianenina.com/wp-content/uploads/2015/09/pizzas.jpg',
             imgURL2: 'http://revistaelconocedor.com/wp-content/uploads/2017/04/shutterstock_378226756-1024x736.jpg',
             imgURL3: 'http://images.citiservi.es//business/ab/8c/be/big_tomaspizza.jpg',
@@ -76674,7 +76699,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         };
     },
 
-    methods: {},
+    methods: {
+        paginationP: function paginationP(asd) {
+            console.log(asd);
+        }
+    },
     beforeMount: function () {
         var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
             var _this = this;
@@ -76683,14 +76712,21 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
-                            /*axios.get('/api/products/'+this.$route.params.id+'/recipes/outstanding')
-                                .then(({data}) => {
-                                    this.destacada=data.data
-                                })*/
                             axios.get('/api/products/' + this.$route.params.id + '/recipes').then(function (_ref2) {
                                 var data = _ref2.data;
 
-                                _this.recipes = data.data;
+                                _this.recipes = data;
+                                _this.pagination.current_page = _this.recipes.meta.current_page;
+                                //this.pagination.last_page=this.recipes.meta.last_page
+
+                                _this.pagination.first_page_url = _this.recipes.links.first;
+                                _this.pagination.next_page_url = _this.recipes.links.next;
+                                _this.pagination.prev_page_url = _this.recipes.links.prev;
+                                _this.pagination.last_page_url = _this.recipes.links.last;
+
+                                _this.pagination.per_p = _this.recipes.meta.per_page;
+                                _this.pagination.total_r = _this.recipes.meta.total;
+                                //this.pagination.current_page=this.recipes.meta.current_page
                             });
 
                         case 1:
@@ -76717,86 +76753,136 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row row-gen " }, [
-    _c(
-      "div",
-      {
-        staticClass: "col-lg-3 col-sm-6 ",
-        staticStyle: { "background-color": "red" }
-      },
-      [
-        _c("div", [
-          _c(
-            "div",
-            {
-              staticClass: "row",
-              staticStyle: { "background-color": "green" }
-            },
-            [
-              _c("img", {
-                staticClass: "img-center",
-                attrs: { src: _vm.imgURL1, alt: "" }
-              })
-            ]
-          ),
+  return _vm.recipes
+    ? _c("div", [
+        _c("div", { staticClass: "row row-gen " }, [
+          _vm.recipes.data[0]
+            ? _c(
+                "div",
+                {
+                  staticClass: "col-lg-3 col-sm-6",
+                  staticStyle: { "background-color": "red" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("img", {
+                      staticClass: "img-center",
+                      attrs: { src: _vm.imgURL1, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("p", { staticClass: "everyelem" }, [
+                      _vm._v(_vm._s(_vm.recipes.data[0].rating))
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e(),
           _vm._v(" "),
+          _vm.recipes.data[1]
+            ? _c(
+                "div",
+                {
+                  staticClass: "col-lg-3 col-sm-6",
+                  staticStyle: { "background-color": "blue" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("img", {
+                      staticClass: "img-center",
+                      attrs: { src: _vm.imgURL2, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("p", { staticClass: "everyelem" }, [
+                      _vm._v(_vm._s(_vm.recipes.data[1].rating))
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.recipes.data[2]
+            ? _c(
+                "div",
+                {
+                  staticClass: "col-lg-3 col-sm-6",
+                  staticStyle: { "background-color": "orange" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("img", {
+                      staticClass: "img-center",
+                      attrs: { src: _vm.imgURL3, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("p", { staticClass: "everyelem" }, [
+                      _vm._v(_vm._s(_vm.recipes.data[2].rating))
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.recipes.data[3]
+            ? _c(
+                "div",
+                {
+                  staticClass: "col-lg-3 col-sm-6",
+                  staticStyle: { "background-color": "green" }
+                },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c("img", {
+                      staticClass: "img-center",
+                      attrs: { src: _vm.imgURL4, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("p", { staticClass: "everyelem" }, [
+                      _vm._v(_vm._s(_vm.recipes.data[3].rating))
+                    ])
+                  ])
+                ]
+              )
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row pagination" }, [
           _c(
             "div",
-            { staticClass: "row", staticStyle: { "text-align": "center" } },
-            [_vm._v("\n                asdasd\n            ")]
+            { staticClass: "everyelem" },
+            [
+              _c("b-pagination", {
+                attrs: {
+                  size: "lg",
+                  "total-rows": _vm.pagination.total_r,
+                  "per-page": _vm.pagination.per_p
+                },
+                on: { input: _vm.paginationP },
+                model: {
+                  value: _vm.pagination.current_page,
+                  callback: function($$v) {
+                    _vm.$set(_vm.pagination, "current_page", $$v)
+                  },
+                  expression: "pagination.current_page"
+                }
+              })
+            ],
+            1
           )
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "col-lg-3 col-sm-6 ",
-        staticStyle: { "background-color": "blue" }
-      },
-      [
+        ]),
+        _vm._v(" "),
         _c("div", [
-          _c("img", {
-            staticClass: "img-center",
-            attrs: { src: _vm.imgURL2, alt: "" }
-          })
+          _vm._v("currentPage: " + _vm._s(_vm.pagination.current_page))
         ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "col-lg-3 col-sm-6 ",
-        staticStyle: { "background-color": "orange" }
-      },
-      [
-        _c("div", [
-          _c("img", {
-            staticClass: "img-center",
-            attrs: { src: _vm.imgURL3, alt: "" }
-          })
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "col-lg-3 col-sm-6 ",
-        staticStyle: { "background-color": "green" }
-      },
-      [
-        _c("div", [
-          _c("img", {
-            staticClass: "img-center",
-            attrs: { src: _vm.imgURL4, alt: "" }
-          })
-        ])
-      ]
-    )
-  ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

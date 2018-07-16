@@ -16,7 +16,10 @@ class RecipeController extends Controller
         return RecipeResource::collection(Recipe::get());
     }
     public function indexByProductId($id) {
-        $recipes=Product::find($id)->recipes()->paginate(5); 
+        $recipeRemoveId=Product::find($id)->recipes()->orderBy('rating','desc')->first()->user_id;
+
+        //$recipes=Product::find($id)->recipes()->where('user_id','!=',$recipeRemoveId)->orderBy('rating','desc')->paginate(5); 
+        $recipes=Product::find($id)->recipes()->where('user_id','!=',$recipeRemoveId)->orderBy('rating','desc')->paginate(4);
         return RecipeResource::collection($recipes);
     }
     public function showOutstanding($id) {

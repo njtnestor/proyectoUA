@@ -6,7 +6,7 @@
             </strong>
             <Buscador/>
         </div>
-        <div class="row correctrow">
+        <div class="row">
             <div class="col">
                 <img class="img-center" src="/images/cuchillo-tenedor.png" alt="">
                 <h1>Crea</h1>
