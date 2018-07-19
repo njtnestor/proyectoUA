@@ -13,4 +13,7 @@ class Recipe extends Model
     public function product(){
         return $this->belongsTo('App\Product');
     }
+    public function steps(){
+        return $this->hasMany('App\Step');
+    }
 }

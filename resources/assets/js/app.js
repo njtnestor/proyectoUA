@@ -20,6 +20,9 @@ Vue.use(BootstrapVue);
 Vue.use(VeeValidate);
 Vue.use(Vueclickaway);
 
+
+
+
 window.api = new Api();
 require('./bootstrap');
 window.Vue = require('vue'); // requiring the Vue

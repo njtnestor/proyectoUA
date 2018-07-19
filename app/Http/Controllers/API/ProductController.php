@@ -18,7 +18,7 @@ class ProductController extends Controller
         return ProductResource::collection(Product::get());
     }
     public function show($id){
-      return new ProductResource(Product::find($id));
+      return new ProductResource(Product::find($id)->load('recipes'));
      //return Product::find($id)
     }
     public function store(Request $request)

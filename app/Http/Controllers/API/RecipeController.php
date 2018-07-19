@@ -15,6 +15,9 @@ class RecipeController extends Controller
     public function index() {
         return RecipeResource::collection(Recipe::get());
     }
+    public function show($id){
+        return new RecipeResource(Recipe::find($id));
+    }
     public function indexByProductId($id) {
         $recipeRemoveId=Product::find($id)->recipes()->orderBy('rating','desc')->first()->user_id;
 

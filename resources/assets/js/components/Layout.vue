@@ -19,7 +19,7 @@
                             </template>
                             <b-dropdown-item to="/profile">Profile</b-dropdown-item>
                             <b-dropdown-item to="/newProduct">New product</b-dropdown-item>
-                            <b-dropdown-item href="#">New recipe</b-dropdown-item>
+                            <b-dropdown-item href="#">Vote products</b-dropdown-item>
                             <b-dropdown-item @click="logout">Signout</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </div>

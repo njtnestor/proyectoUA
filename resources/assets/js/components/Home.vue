@@ -35,7 +35,8 @@ export default {
 
 <style scoped>
     .fondoBuscador{
-        height: 500px;
+        /*height: 500px;*/
+        height: 45vh;
        /* background-image: url(http://franchisesouq.com/files/equipment/5a093473e8777_CB_-_prosciutto-pesto-panini-4_copy.jpg);*/
         background-image: linear-gradient(rgba(0, 0, 0, 0.35),rgba(0, 0, 0, 0.35) ),url(https://www.boxpark.co.uk/assets/Uploads/_resampled/FillWyIxOTIwIiwiMTA4MCJd/Bao-Bao-Holder3.jpg);
         text-align: center;
@@ -60,6 +61,7 @@ export default {
         font-size: 29px;
     }
     .row{
+
         padding-top: 40px;
         margin-right: 0;
     }

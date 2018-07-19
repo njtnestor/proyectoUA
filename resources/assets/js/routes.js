@@ -26,6 +26,11 @@ let routes = [
         component: require('./components/ProductRecipes.vue')
     },
     {
+        path:'/recipe/:id',
+        name: 'recipe',
+        component: require('./components/Recipe.vue')
+    },
+    {
         path: '/profile',
         name: 'profile',
         component: require('./components/Profile.vue'),

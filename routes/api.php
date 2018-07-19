@@ -33,7 +33,7 @@ Route::resource('products', 'API\ProductController')->only([
     'index', 'show'
 ]);
 Route::resource('recipes', 'API\RecipeController')->only([
-    'index'
+    'index', 'show'
 ]);
 Route::get('products/{id}/recipes','API\RecipeController@indexByProductId');//no incluye el mejor/recomendado/outstanding
 Route::get('products/{id}/recipes/outstanding','API\RecipeController@showOutstanding');
