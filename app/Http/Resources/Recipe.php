@@ -21,6 +21,7 @@ class Recipe extends JsonResource
         return [
             'id' => $this->id,
             'serving' => $this->serving,
+            'image' => $this->image,
             'description' => $this->description,
             'votes_p' => $this->votes_p,
             'votes_n' => $this->votes_n,

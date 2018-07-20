@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
-    protected $fillable = ['serving','description','user_id','product_id'];
+    protected $fillable = ['serving','description','user_id','product_id','image'];
     public function user(){
         return $this->belongsTo('App\User');
     }

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
+    public $timestamps = false;
+    protected $fillable = ['step','description'];
     public function recipe(){
         return $this->belongsTo('App\Recipe');
     }

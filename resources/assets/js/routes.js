@@ -31,6 +31,12 @@ let routes = [
         component: require('./components/Recipe.vue')
     },
     {
+        path:'/product/:id/newRecipe',
+        name: 'newRecipe',
+        component: require('./components/RecipeCreate.vue'),
+        meta: { middlewareAuth: true }
+    },
+    {
         path: '/profile',
         name: 'profile',
         component: require('./components/Profile.vue'),

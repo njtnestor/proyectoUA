@@ -1,12 +1,12 @@
 <template>
     <router-link tag="div" v-if="destacada" class="row row-gen " :to="{name: 'recipe', params: { id : destacada.id}}">
             <div class="col-lg-4 col-sm-6">
-                <img class="img-center" :src=imgURL alt="">
+                <img class="img-center" :src=destacada.image alt="">
             </div>
             <div class="col-lg-8 col-sm-5 ">
                
                 <div class="row ">     
-                    <h1>Best recipe</h1>         
+                    <h1>Best Recipe</h1>         
                 </div>
                 <div class="row">
                     <h3>By:&nbsp</h3>
@@ -31,6 +31,9 @@
                             <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='destacada.rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="50"></star-rating>
                         </div>
                     </h3>
+                </div>
+                <div class="row">
+                    <b-button class="btn btn-primary" :to="{name: 'newRecipe', params: { id : $route.params.id}}">New recipe</b-button>
                 </div>
             </div>
 

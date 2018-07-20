@@ -28,6 +28,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/get-user', 'API\AuthController@getUser');
    // Route::get('/prueba', 'API\ProductController@prueba');
     Route::resource('products', 'API\ProductController');
+    Route::post('/products/{id}/recipes','API\RecipeController@store');
 });
 Route::resource('products', 'API\ProductController')->only([
     'index', 'show'

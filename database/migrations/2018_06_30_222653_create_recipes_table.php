@@ -16,7 +16,8 @@ class CreateRecipesTable extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('serving');
-            $table->string('description');
+            $table->string('description')->default("");
+            $table->string('image','1500')->default("");
             $table->integer('votes_p')->default(0);
             $table->integer('votes_n')->default(0);
             $table->integer('rating')->default(0);

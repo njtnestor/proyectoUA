@@ -2,7 +2,7 @@
     <div class="container">
         <div v-if="recipe" class="row row-gen ">
             <div class="col-lg-4 col-sm-6">
-                <img class="img-center" :src=imgURL alt="">
+                <img class="img-center" :src=recipe.image alt="">
             </div>
             <div class="col-lg-8 col-sm-5 ">
                 <div class="row ">     

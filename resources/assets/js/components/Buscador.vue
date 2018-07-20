@@ -4,7 +4,7 @@
             <b-form-input class="search" @keyup.native="elegir2()" v-model="search" type="text" placeholder="Enter a product"></b-form-input>              
             <div class="input-group-append pp">
                 <!--<button class="btn btn-primary submit boton">Enter</button>-->
-                <b-button class="btn btn-primary submit boton" :to="{name: 'productRecipes', params: { id : idSearch, productName: search }}">Enter</b-button>
+                <b-button class="btn btn-primary submit boton" :to="{name: 'productRecipes', params: { id : idSearch}}">Enter</b-button>
             </div>
             <ul v-show="search.length>2 && enc==true && choosed==false && inputclicked==true"  class="listabusqueda ">
                 <li class="everysearch" v-for="(i,index) in filtrado()" @click="elegir(i)" :key="index" >{{i.name}}({{i.marca}})</li> 
