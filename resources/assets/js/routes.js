@@ -37,6 +37,12 @@ let routes = [
         meta: { middlewareAuth: true }
     },
     {
+        path:'/productVotes',
+        name: 'productVote',
+        component: require('./components/ProductVote.vue'),
+        meta: { middlewareAuth: true }
+    },
+    {
         path: '/profile',
         name: 'profile',
         component: require('./components/Profile.vue'),

@@ -1,14 +1,14 @@
 <template>
     <div v-if="recipes">
         <div class="row row-gen ">
-            <div v-if="recipes.data[0]" class="col-lg-3 col-sm-6 borderh" v-for="(recipe,index) in recipes.data" :key='index'>
+            <router-link tag="div" v-if="recipes.data[0]" class="col-lg-3 col-sm-6 borderh" v-for="(recipe,index) in recipes.data"  :key='index' :to="{name: 'recipe', params: { id : recipe.id}}">
                 <div class="row">
                     <img class="img-center" :src=recipe.image alt="">
                 </div>
                 <div class="row">
                     <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='recipe.rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="30"></star-rating>
                 </div>
-            </div>
+            </router-link>
 
            <!-- <div v-if="recipes.data[1]"  class="col-lg-3 col-sm-6 borderh">
                 <div class="row">

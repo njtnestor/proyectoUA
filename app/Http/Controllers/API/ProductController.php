@@ -21,6 +21,13 @@ class ProductController extends Controller
       return new ProductResource(Product::find($id)->load('recipes'));
      //return Product::find($id)
     }
+    public function indexByUser(){
+      return ProductResource::collection(Product::get()->where('user_id',auth()->user()->id));
+    }
+  
+    public function indexByNotApproved(){
+        return ProductResource::collection(Product::get()->where('approved','=',0));
+    }
     public function store(Request $request)
     {
       $product = Product::create([

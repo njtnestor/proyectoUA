@@ -31,7 +31,7 @@ export default {
         return {
             recipe:{
                 image:'',
-                serving:'',
+                serving:'1',
                 steps:[
                     {
                         description:''

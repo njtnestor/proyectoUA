@@ -20,15 +20,15 @@ Route::get('/users','API\AuthController@index');
     'products' => 'ProductController'
 ]);*/
 
-
-//Route::get('/products', 'ProductController@index');
-//Route::post('/products','ProductController@store');
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', 'API\AuthController@logout');
     Route::get('/get-user', 'API\AuthController@getUser');
-   // Route::get('/prueba', 'API\ProductController@prueba');
     Route::resource('products', 'API\ProductController');
     Route::post('/products/{id}/recipes','API\RecipeController@store');
+    Route::get('/productsByUser','API\ProductController@indexByUser');
+    Route::get('/recipesByUser','API\RecipeController@indexByUser');
+    Route::get('/productsByNotApproved','API\ProductController@indexByNotApproved');
+
 });
 Route::resource('products', 'API\ProductController')->only([
     'index', 'show'

@@ -46,7 +46,7 @@
             <div class="row" >
                 <ul>
                     <li v-for="(step,index) in recipe.steps" :key='index'>
-                        <h4>Step {{step.step}}</h4>
+                        <h4>Step {{step.step+1}}</h4>
                         <p>{{step.description}}</p>
                     </li> 
                         

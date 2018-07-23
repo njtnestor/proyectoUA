@@ -20,6 +20,7 @@ class Product extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'marca' => $this->marca,
+            'approved' => $this->approved,
             'recipes' => RecipeResource::collection($this->whenLoaded('recipes'))
         ];
     }

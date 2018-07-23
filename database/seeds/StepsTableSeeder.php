@@ -12,22 +12,22 @@ class StepsTableSeeder extends Seeder
     public function run()
     {
         DB::table('steps')->insert([
-            'step' => 1,
+            'step' => 0,
             'description' => 'me gusta este paso 1',
             'recipe_id' => Recipe::All()->where('id',5)->first()->id,
         ]);
         DB::table('steps')->insert([
-            'step' => 2,
+            'step' => 1,
             'description' => 'me gusta este paso 2',
             'recipe_id' => Recipe::All()->where('id',5)->first()->id,
         ]);
         DB::table('steps')->insert([
-            'step' => 3,
+            'step' => 2,
             'description' => 'me gusta este paso 3',
             'recipe_id' => Recipe::All()->where('id',5)->first()->id,
         ]);
         DB::table('steps')->insert([
-            'step' => 4,
+            'step' => 3,
             'description' => 'me gusta este paso 4',
             'recipe_id' => Recipe::All()->where('id',5)->first()->id,
         ]);

@@ -46,6 +46,9 @@ class RecipeController extends Controller
         $recipes=Product::find($id)->recipes()->where('user_id','!=',$recipeRemoveId)->orderBy('rating','desc')->paginate(4);
         return RecipeResource::collection($recipes);
     }
+    public function indexByUser(){
+        return RecipeResource::collection(Recipe::get()->where('user_id',auth()->user()->id));
+    }
     public function showOutstanding($id) {
         $recipes=Product::find($id)->recipes()->orderBy('rating','desc')->first();      
         return new RecipeResource($recipes);

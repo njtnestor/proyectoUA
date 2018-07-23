@@ -4,14 +4,18 @@
       <tr>
         <th>Name</th>
         <th>Marca</th>
-        <th>Aceptado</th>
+        <th>Positive votes</th>
+        <th>Negative votes</th>
+        <th>Accepted</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="product in products" track-by="id">
+      <tr v-for="(product,index) in products" :key='index' track-by="id">
         <td>{{product.name}}</td>
         <td>{{product.marca}}</td>
-        <td>{{product.aceptado}}</td>
+        <td></td>
+        <td></td>
+        <td>{{product.approved}}</td>
       </tr>
     </tbody>
   </table>
@@ -23,28 +27,20 @@
 export default {
     data () {
         return {
-            products: [
-                {
-                    name: 'product1',
-                    marca: 'marcax',
-                    fecha: 'x/x/xxxx',
-                    aceptado: 1
-                },
-                {
-                    name: 'product2',
-                    marca: 'marcax',
-                    fecha: 'x/x/xxxx',
-                    aceptado: 1
-                },
-                {
-                    name: 'product3',
-                    marca: 'marcax',
-                    fecha: 'x/x/xxxx',
-                    aceptado: 1
-                }
-            ]
+            products:'',
         }
-    }
+    },
+    async beforeMount(){
+        axios.get('/api/productsByUser/')
+            .then(({data}) => {
+                console.log("parte de producto");
+                this.products=data.data
+            })
+        
+    },
+    methods:{
+        
+    },
 }
 </script>
 <style scoped>
