@@ -33,8 +33,8 @@
             </div>
             <div class="row" >
                 <ul>
-                    <li v-for="(ingrediente,index) in ingredientes" :key='index'>
-                        {{ingrediente.name}}
+                    <li v-for="(ingredient,index) in recipe.ingredients" :key='index'>
+                        {{ingredient.name}}:&nbsp{{ingredient.cantidad}}
                     </li> 
                 </ul>
             </div>
@@ -68,16 +68,7 @@ export default {
 
     data(){
         return{
-            recipe:'',
-            ingredientes:[
-                {
-                    name:'Potato'
-                },
-                {
-                    name:'Cheese'
-                }
-            ],
-            imgURL: 'http://www.videosrecetas.com/wp-content/uploads/2015/07/maxresdefault13.jpg'
+            recipe:''
         };
     },
     computed:{

@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Product;
+use Carbon\Carbon;
 class RecipesTableSeeder extends Seeder
 {
     /**
@@ -50,7 +51,8 @@ class RecipesTableSeeder extends Seeder
             'description' => 'pasos lelelele',
             'rating' => 4,
             'user_id' => User::All()->where('name','jose')->first()->id,
-            'product_id' => Product::All()->where('id','2')->first()->id
+            'product_id' => Product::All()->where('id','2')->first()->id,
+            'created_at' => Carbon::now()
         ]);
         DB::table('recipes')->insert([
             'serving' => 3,

@@ -1,5 +1,5 @@
 <template>
-    <router-link tag="div" v-if="destacada" class="row row-gen " :to="{name: 'recipe', params: { id : destacada.id}}">
+    <router-link tag="div" v-if="destacada || (aviso==false)" class="row row-gen " :to="{name: 'recipe', params: { id : destacada.id}}">
             <div class="col-lg-4 col-sm-6">
                 <img class="img-center" :src=destacada.image alt="">
             </div>
@@ -38,6 +38,13 @@
             </div>
 
         </router-link>
+        <div class="no-recipe" v-else>
+            
+            <h2>Aun no existen recetas de este producto. Se el primero en crear una.</h2>
+            <div class="everyelem">
+                <b-button class="btn btn-primary " :to="{name: 'newRecipe', params: { id : $route.params.id}}">New recipe</b-button>
+            </div>
+        </div>    
     
 </template>
 
@@ -52,6 +59,7 @@ export default {
 
     data(){
         return{
+            aviso: false,
             destacada:null,
             imgURL: 'http://www.videosrecetas.com/wp-content/uploads/2015/07/maxresdefault13.jpg'
         };
@@ -70,6 +78,12 @@ export default {
         axios.get('/api/products/'+this.$route.params.id+'/recipes/outstanding')
             .then(({data}) => {
                 this.destacada=data.data
+            })
+            .catch(({error}) => {
+                // handle error
+                console.log("hay error");
+                this.aviso=true
+                
             })
         /*axios.get('/api/products/'+this.$route.params.id+'/recipes')
             .then(({data}) => {
@@ -118,6 +132,12 @@ export default {
         margin: 0 auto;
 
     }
+    .center-btn{
+        display: block;
+        margin: 0 auto;
+        background-color: #007bff !important;
+        border-color: #007bff !important;
+    }
      h1{
         font-size:5vw;
      }
@@ -125,7 +145,11 @@ export default {
         font-size:2vw;
      }
      .row-gen:hover{
-         box-shadow: 0 0 0 2px #46427c;
-         cursor: pointer;
+        box-shadow: 0 0 0 2px #46427c;
+        cursor: pointer;
+     }
+     .no-recipe{
+        margin-top:40px;
+        box-shadow: 0 0 0 2px #eaeaea;
      }
 </style>

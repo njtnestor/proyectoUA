@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Recipe;
 use App\Product;
 use App\Step;
+use App\Ingredient;
 
 
 class RecipeController extends Controller
@@ -35,6 +36,15 @@ class RecipeController extends Controller
                 ]
             );
             $recipe->steps()->save($step);
+        }
+        foreach ($request->input('ingredients') as $key=>$ingredient) {
+            $ingredient= new Ingredient(
+                [
+                    'name' => $ingredient['name'],
+                    'cantidad' =>$ingredient['cantidad']
+                ]
+            );
+            $recipe->ingredients()->save($ingredient);
         }
         return new RecipeResource($recipe);
         

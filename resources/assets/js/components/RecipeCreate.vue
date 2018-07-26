@@ -7,6 +7,13 @@
             <input type="text" class="form-control" placeholder="Enter image link" name="image" v-model="recipe.image">
             <h2>Servings</h2>
             <b-form-select v-model="recipe.serving" :options="options" class="mb-3" />
+            <h2>Ingredients</h2>
+            <b-form inline class="ingredietsInline" v-for="(ingredient,index) in recipe.ingredients" :key='index'>
+                <input type="text" class="mb-2 mr-sm-2 mb-sm-0 form-control" placeholder="Enter ingredient" name="ingredient" v-model="ingredient.name">
+                <input type="text" class="mb-2 mr-sm-2 mb-sm-0 form-control" placeholder="Enter amount" name="amount" v-model="ingredient.cantidad">
+                <b-button class="btn btn-primary" @click="deleteIngredient(ingredient)">Delete ingredient</b-button>
+            </b-form>
+            <b-button class="btn btn-primary" @click="addIngredient()">Add ingredient</b-button>
             <div class="steps">
                 <div v-for="(step,index) in recipe.steps" :key='index'>
                     <h3>Step {{index+1}}</h3>
@@ -32,6 +39,12 @@ export default {
             recipe:{
                 image:'',
                 serving:'1',
+                ingredients:[
+                    {
+                        name:'',
+                        cantidad:''
+                    }
+                ],
                 steps:[
                     {
                         description:''
@@ -58,7 +71,15 @@ export default {
             axios.post('/api/products/'+this.$route.params.id+'/recipes',this.recipe)
                 .then(({data})=>{
                     console.log("receta creada")
+                    this.$router.push({ name: 'recipe', params: { id: data.data.id }})
+
                 })
+        },
+        addIngredient(){
+            this.recipe.ingredients.push({name:'',cantidad:''})
+        },
+        deleteIngredient(ingredient){
+            this.recipe.ingredients.splice(this.recipe.ingredients.indexOf(ingredient),1); 
         }
     },
 
@@ -105,6 +126,9 @@ export default {
     }
     .img-thumbnail{
         background-color: black;
+    }
+    .ingredietsInline{
+        margin-bottom: 5px;
     }
 </style>
 

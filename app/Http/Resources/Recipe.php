@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Product as ProductResource;
 use App\Http\Resources\User as UserResource;
 use App\Http\Resources\Step as StepResource;
+use App\Http\Resources\Ingredient as IngredientResource;
 
 class Recipe extends JsonResource
 {
@@ -29,6 +30,7 @@ class Recipe extends JsonResource
             'user'=> new UserResource($this->user),
             'product'=> new ProductResource($this->product),
             'steps' => StepResource::collection($this->steps),
+            'ingredients' => IngredientResource::collection($this->ingredients),
             //'product_id' => $this->product_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
