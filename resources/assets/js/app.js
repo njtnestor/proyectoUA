@@ -14,6 +14,16 @@ import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue'
 import VeeValidate from 'vee-validate';
 import Vueclickaway from 'vue-clickaway';
+import fontawesome from '@fortawesome/fontawesome';
+
+import solid from '@fortawesome/fontawesome-free-solid';
+import brands from '@fortawesome/fontawesome-free-brands';
+import regular from '@fortawesome/fontawesome-free-regular';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+
+fontawesome.library.add(solid, brands, regular);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 
 Vue.use(BootstrapVue);

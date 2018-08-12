@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use DB;
 use Hash;
+use App\OauthClients;
 
 class AuthController extends Controller
 {
@@ -70,12 +71,12 @@ class AuthController extends Controller
                 'status' => 422
             ], 422);
         }
-
+        $oauth_client = OauthClients::findOrFail(2);
         // Send an internal API request to get an access token
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' => env('CLIENT_SECRET'),
+            'client_secret' => $oauth_client->secret,
             'username' => request('username'),
             'password' => request('password'),
             

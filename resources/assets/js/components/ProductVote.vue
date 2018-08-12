@@ -4,16 +4,19 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Marca</th>
-                <th>Positive votes</th>
-                <th>Negative votes</th>
+                <th>Brand</th>
+                <th>Actions</th>
+                
             </tr>
             </thead>
             <tbody>
             <tr v-for="(product,index) in products" :key='index' track-by="id">
                 <td>{{product.name}}</td>
                 <td>{{product.marca}}</td>
-                <td></td>
+                <td>
+                    <font-awesome-icon size="lg" :icon="['fas', 'thumbs-up']"/>{{positiveVotes}}
+                    <font-awesome-icon size="lg" :icon="['fas', 'thumbs-down']"/>{{negativeVotes}}
+                </td>
                 <td></td>
             </tr>
             </tbody>
