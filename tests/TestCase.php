@@ -13,4 +13,5 @@ abstract class TestCase extends BaseTestCase
         \Artisan::call('passport:install',['-vvv' => true]);
         \Artisan::call('db:seed',['-vvv' => true]);
     }
+    
 }

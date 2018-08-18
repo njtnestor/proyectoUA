@@ -19,17 +19,10 @@ class ApiLoginTest extends TestCase
             'username' => 'nestor@gmail.com',
             'password' => 'secret',
         ];
-        /*$this->post('api/login', $body)
-             ->assertStatus(200);
+        $response = $this->json('POST', '/api/login', ['username' => 'nestor@gmail.com','password' => 'secret']);
 
-        $this->json('POST','api/login',$body,['Content-Type' => 'application/json'])
-            ->assertStatus(200)
-            ->assertJsonStructure(['token_type','expires_in','access_token','refresh_token']);*/
-
-            $response = $this->get('/');
-            $response = $this->json('POST', '/api/login', ['username' => 'nestor@gmail.com','password' => 'secret']);
-
-            $response->assertStatus(200);
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['token','user','status']);
     }
 
     public function testOauthLogin() {
