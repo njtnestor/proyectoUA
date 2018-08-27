@@ -17,7 +17,7 @@
             <div class="steps">
                 <div v-for="(step,index) in recipe.steps" :key='index'>
                     <h3>Step {{index+1}}</h3>
-                    <b-form-textarea class="textar"  v-model="step.description" placeholder="Write the first step" :rows="5" ></b-form-textarea>
+                    <b-form-textarea class="textar" no-resize=true  v-model="step.description" placeholder="Write the first step" :rows="5" ></b-form-textarea>
                     <b-button v-if="index<7" class="btn btn-primary" @click="addStep(index)">Add step</b-button>
                     <b-button v-if="index>0 || recipe.steps.length>1" class="btn btn-primary" @click="deleteLastStep(step)">Remove</b-button>  
                 </div>

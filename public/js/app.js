@@ -51012,7 +51012,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     beforeMount: function beforeMount() {
         var _this2 = this;
 
-        axios.get('/api/products').then(function (_ref) {
+        axios.get('/api/productsApproved').then(function (_ref) {
             var data = _ref.data;
 
 
@@ -53823,7 +53823,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.row-gen[data-v-6b9f7f62]{\n    background-color: white;\n    margin: 80px;\n    margin-top:40px;\n    margin-bottom: 0px;\n    /*margin-top:20px;*/\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.pagination[data-v-6b9f7f62]{\n    margin-top: 10px;\n    margin-left: 80px;\n    margin-right: 80px;\n}\n.img-center[data-v-6b9f7f62]{\n    /*width: 360px;*/\n    height: 300px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.everyelem[data-v-6b9f7f62]{\n    display: block;\n    margin: 0 auto;\n}\n.borderh[data-v-6b9f7f62]:hover{\n    -webkit-box-shadow: 0 0 0 2px #46427c;\n            box-shadow: 0 0 0 2px #46427c;\n     cursor: pointer;\n}\n\n", ""]);
+exports.push([module.i, "\n.row-gen[data-v-6b9f7f62]{\n    background-color: white;\n    margin: 80px;\n    margin-top:40px;\n    margin-bottom: 0px;\n    /*margin-top:20px;*/\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.pagination[data-v-6b9f7f62]{\n    margin-top: 10px;\n    margin-left: 80px;\n    margin-right: 80px;\n}\n.img-center[data-v-6b9f7f62]{\n    /*width: 360px;*/\n    height: 300px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n    /*object-fit: none;*/\n}\n.everyelem[data-v-6b9f7f62]{\n    display: block;\n    margin: 0 auto;\n}\n.borderh[data-v-6b9f7f62]:hover{\n    -webkit-box-shadow: 0 0 0 2px #46427c;\n            box-shadow: 0 0 0 2px #46427c;\n     cursor: pointer;\n}\n\n", ""]);
 
 // exports
 
@@ -53842,33 +53842,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -54215,7 +54188,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.row-gen[data-v-de231e76]{\n    background-color: white;\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-de231e76]{\n    \n    /*width: 360px;*/\n    height: 250px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\nh1[data-v-de231e76]{\n    font-size:4vw;\n}\nh3[data-v-de231e76]{\n    font-size:2vw;\n}\n.row-gen2[data-v-de231e76]{\n    background-color: white;\n    margin-top:20px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n    margin-right: 15px;\n    margin-left: 15px;\n}\n.row[data-v-de231e76]{\n    margin-right: 15px;\n    margin-left: 15px;\n}\n.hand[data-v-de231e76]{\n    color:grey;\n}\n.hand[data-v-de231e76]:hover{\n    cursor:pointer;\n}\n.like[data-v-de231e76]{\n    color:green;\n}\n.like[data-v-de231e76]:hover{\n    color:green;\n    cursor: pointer;\n}\n.dislike[data-v-de231e76]{\n    color:red;\n}\n.dislike[data-v-de231e76]:hover{\n    color:red;\n    cursor: pointer;\n}\n\n", ""]);
+exports.push([module.i, "\n.imgTitle[data-v-de231e76]{\n    border: solid 4px black;\n    border-radius: 6px;\n    height: 250px;\n    margin:10px;\n    width:100%;\n    min-height:100px;\n}\n.everyelem[data-v-de231e76]{\n   width: 100%;\n}\n.buttoncomment[data-v-de231e76]{\n    float: right;\n    margin-top:4px;\n    background-color: #007bff !important;\n    border-color: #007bff !important;\n}\nli[data-v-de231e76]{\n    list-style:none;\n}\n.row-gen[data-v-de231e76]{\n    background-color: white;\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center2[data-v-de231e76]{\n    \n    \n    display: block;\n    margin: 0 auto;\n}\nh1[data-v-de231e76]{\n    font-size:60px;\n}\nh3[data-v-de231e76]{\n    font-size:30px;\n}\n.row-gen2[data-v-de231e76]{\n    background-color: white;\n    margin-top:20px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n    margin-right: 15px;\n    margin-left: 15px;\n}\n.row-comment[data-v-de231e76]{\n    background-color: white;\n    margin-top:20px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n    margin-right: 15px;\n    margin-left: 15px;\n    padding-left: 15px;\n    padding-right: 15px;\n    margin-bottom: 20px;\n    padding-top:15px;\n}\n.row[data-v-de231e76]{\n    margin-right: 15px;\n    margin-left: 15px;\n}\n.hand[data-v-de231e76]{\n    color:grey;\n}\n.hand[data-v-de231e76]:hover{\n    cursor:pointer;\n}\n.like[data-v-de231e76]{\n    color:green;\n}\n.like[data-v-de231e76]:hover{\n    color:green;\n    cursor: pointer;\n}\n.dislike[data-v-de231e76]{\n    color:red;\n}\n.dislike[data-v-de231e76]:hover{\n    color:red;\n    cursor: pointer;\n}\n\n", ""]);
 
 // exports
 
@@ -54296,6 +54269,30 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -54306,11 +54303,16 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
     data: function data() {
         return {
+            textNewComment: null,
+            authenticated: auth.check(),
+            commentbutton: false,
             handlike: false,
             handdislike: false,
             positiveVotes: 12,
             negativeVotes: 5,
-            recipe: ''
+            recipe: '',
+            comments: [],
+            img: 'https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg'
         };
     },
 
@@ -54327,20 +54329,33 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 this.handdislike = true;
                 console.log("has votado negativamente!");
             }
+        },
+        createComment: function createComment() {
+            var _this = this;
+
+            var data = {
+                description: this.textNewComment
+            };
+            axios.post('/api/recipes/' + this.$route.params.id + '/comments', data).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.comments = data.data;
+            });
         }
     },
     beforeMount: function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-            var _this = this;
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
+            var _this2 = this;
 
             return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
-                            axios.get('/api/recipes/' + this.$route.params.id).then(function (_ref2) {
-                                var data = _ref2.data;
+                            axios.get('/api/recipes/' + this.$route.params.id).then(function (_ref3) {
+                                var data = _ref3.data;
 
-                                _this.recipe = data.data;
+                                _this2.recipe = data.data;
+                                _this2.comments = data.data.comments;
                             });
 
                         case 1:
@@ -54352,7 +54367,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         }));
 
         function beforeMount() {
-            return _ref.apply(this, arguments);
+            return _ref2.apply(this, arguments);
         }
 
         return beforeMount;
@@ -54373,7 +54388,7 @@ var render = function() {
           ? _c("div", { staticClass: "row row-gen " }, [
               _c("div", { staticClass: "col-lg-4 col-sm-6" }, [
                 _c("img", {
-                  staticClass: "img-center",
+                  staticClass: "imgTitle",
                   attrs: { src: _vm.recipe.image, alt: "" }
                 })
               ]),
@@ -54445,12 +54460,12 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "row-gen2" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("h3", [
-              _vm._v("Ingredients(" + _vm._s(_vm.recipe.serving) + " servings)")
-            ])
+        _c("div", { staticClass: "row-comment" }, [
+          _c("h4", [
+            _vm._v("Ingredients(" + _vm._s(_vm.recipe.serving) + " servings)")
           ]),
+          _vm._v(" "),
+          _c("hr"),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c(
@@ -54470,8 +54485,10 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row-gen2" }, [
-          _vm._m(0),
+        _c("div", { staticClass: "row-comment" }, [
+          _c("h4", [_vm._v("Elaboration")]),
+          _vm._v(" "),
+          _c("hr"),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
             _c(
@@ -54485,20 +54502,102 @@ var render = function() {
               })
             )
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row-comment" },
+          [
+            _c("h4", [_vm._v("Comments")]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm.authenticated
+              ? _c(
+                  "div",
+                  { staticClass: "row" },
+                  [
+                    _c("b-form-textarea", {
+                      attrs: {
+                        "no-resize": true,
+                        placeholder: "Insert here your comment...",
+                        rows: 2
+                      },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.commentbutton = true
+                        }
+                      },
+                      model: {
+                        value: _vm.textNewComment,
+                        callback: function($$v) {
+                          _vm.textNewComment = $$v
+                        },
+                        expression: "textNewComment"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "everyelem" },
+                      [
+                        _vm.commentbutton
+                          ? _c(
+                              "b-button",
+                              {
+                                staticClass: "btn btn-primary buttoncomment",
+                                on: {
+                                  click: function($event) {
+                                    _vm.createComment()
+                                  }
+                                }
+                              },
+                              [_vm._v("Comment")]
+                            )
+                          : _vm._e()
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._l(_vm.comments, function(comment, index) {
+              return _c("div", { key: index, staticClass: "row" }, [
+                _c("div", { staticClass: "col-2" }, [
+                  _c("img", {
+                    staticClass: "img-center2",
+                    attrs: {
+                      rounded: "circle",
+                      width: "50",
+                      height: "50",
+                      src: _vm.img,
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-10" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("li", [
+                      _c("h5", [_vm._v(_vm._s(comment.user_id.name))]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(comment.description))])
+                    ])
+                  ])
+                ])
+              ])
+            })
+          ],
+          2
+        )
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("h3", [_vm._v("Elaboration")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -54860,7 +54959,11 @@ var render = function() {
                   _vm._v(" "),
                   _c("b-form-textarea", {
                     staticClass: "textar",
-                    attrs: { placeholder: "Write the first step", rows: 5 },
+                    attrs: {
+                      "no-resize": "true",
+                      placeholder: "Write the first step",
+                      rows: 5
+                    },
                     model: {
                       value: step.description,
                       callback: function($$v) {
@@ -55016,7 +55119,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.container[data-v-7f495e52]{\n    margin-top:20px;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-7f495e52]{\n    margin-top:20px;\n}\n.hand[data-v-7f495e52]{\n     color:grey;\n}\n.hand[data-v-7f495e52]:hover{\n     cursor:pointer;\n}\n.like[data-v-7f495e52]{\n     color:green;\n}\n.like[data-v-7f495e52]:hover{\n     color:green;\n     cursor: pointer;\n}\n.dislike[data-v-7f495e52]{\n     color:red;\n}\n.dislike[data-v-7f495e52]:hover{\n     color:red;\n     cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -55064,6 +55167,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            handlike: [],
+            handdislike: [],
             products: ''
 
         };
@@ -55097,7 +55202,20 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         return beforeMount;
     }(),
 
-    methods: {}
+    methods: {
+        like: function like(index) {
+            if (this.handdislike.includes(index) == false && this.handlike.includes(index) == false) {
+                this.handlike.push(index);
+                console.log("has votado positivamente!");
+            }
+        },
+        dislike: function dislike(index) {
+            if (this.handlike.includes(index) == false && this.handdislike.includes(index) == false) {
+                this.handdislike.push(index);
+                console.log("has votado negativamente!");
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -55108,39 +55226,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("table", { staticClass: "table table-hover product-table" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.products, function(product, index) {
-          return _c("tr", { key: index, attrs: { "track-by": "id" } }, [
-            _c("td", [_vm._v(_vm._s(product.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.marca))]),
-            _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c("font-awesome-icon", {
-                  attrs: { size: "lg", icon: ["fas", "thumbs-up"] }
-                }),
-                _vm._v(_vm._s(_vm.positiveVotes) + "\n                "),
-                _c("font-awesome-icon", {
-                  attrs: { size: "lg", icon: ["fas", "thumbs-down"] }
-                }),
-                _vm._v(_vm._s(_vm.negativeVotes) + "\n            ")
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("td")
-          ])
-        })
-      )
-    ])
-  ])
+  return _vm.products
+    ? _c("div", { staticClass: "container" }, [
+        _c("table", { staticClass: "table table-hover product-table" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.products, function(product, index) {
+              return _c("tr", { key: index, attrs: { "track-by": "id" } }, [
+                _c("td", [_vm._v(_vm._s(product.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(product.marca))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c("font-awesome-icon", {
+                      staticClass: "hand",
+                      class: { like: _vm.handlike.includes(index) },
+                      attrs: { size: "lg", icon: ["fas", "thumbs-up"] },
+                      on: {
+                        click: function($event) {
+                          _vm.like(index)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("font-awesome-icon", {
+                      staticClass: "hand",
+                      class: { dislike: _vm.handdislike.includes(index) },
+                      attrs: { size: "lg", icon: ["fas", "thumbs-down"] },
+                      on: {
+                        click: function($event) {
+                          _vm.dislike(index)
+                        }
+                      }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("td")
+              ])
+            })
+          )
+        ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -55689,9 +55822,9 @@ var render = function() {
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(product.marca))]),
           _vm._v(" "),
-          _c("td"),
+          _c("td", [_vm._v(_vm._s(product.votes_p))]),
           _vm._v(" "),
-          _c("td"),
+          _c("td", [_vm._v(_vm._s(product.votes_n))]),
           _vm._v(" "),
           _c("td", [_vm._v(_vm._s(product.approved))])
         ])

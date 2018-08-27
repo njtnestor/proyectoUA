@@ -76,7 +76,7 @@ export default {
         }
     },
     beforeMount() {
-        axios.get('/api/products')
+        axios.get('/api/productsApproved')
                 .then(({data}) => {
                     
                     this.array=data.data

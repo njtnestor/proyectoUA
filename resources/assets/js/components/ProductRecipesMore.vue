@@ -9,33 +9,6 @@
                     <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='recipe.rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="30"></star-rating>
                 </div>
             </router-link>
-
-           <!-- <div v-if="recipes.data[1]"  class="col-lg-3 col-sm-6 borderh">
-                <div class="row">
-                    <img class="img-center" :src=imgURL2 alt="">
-                </div>
-                <div class="row">
-                    <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='recipes.data[1].rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="30"></star-rating>
-                </div>
-            </div>
-            <div v-if="recipes.data[2]"  class="col-lg-3 col-sm-6 borderh">
-                <div class="row">
-                    <img class="img-center" :src=imgURL3 alt="">
-                </div>
-                <div class="row">
-                    <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='recipes.data[2].rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="30"></star-rating>
-                </div>
-            </div>
-            <div v-if="recipes.data[3]"  class="col-lg-3 col-sm-6 borderh">
-                <div class="row">
-                    <img class="img-center" :src=imgURL4 alt="">
-                </div>
-                <div class="row">
-                    <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='recipes.data[3].rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="30"></star-rating>
-                </div>
-                
-            </div>-->
-
         </div>
         <div class="row pagination">
             <div class="everyelem">
@@ -147,6 +120,7 @@ export default {
         padding:20px;
         width:100%;
         min-height:100px;
+        /*object-fit: none;*/
     }
     .everyelem{
         display: block;

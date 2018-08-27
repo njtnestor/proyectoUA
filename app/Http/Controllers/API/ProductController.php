@@ -17,6 +17,9 @@ class ProductController extends Controller
     public function index() {
         return ProductResource::collection(Product::get());
     }
+    public function indexApproved(){
+      return ProductResource::collection(Product::get()->where('approved',1));
+    }
     public function show($id){
       return new ProductResource(Product::find($id)->load('recipes'));
      //return Product::find($id)
@@ -33,7 +36,7 @@ class ProductController extends Controller
       $product = Product::create([
         'name' => request('name'),
         'marca' => request('marca'),
-        'approved' => true,
+        'approved' => false,
         'user_id' => auth()->user()->id
       ]);
 

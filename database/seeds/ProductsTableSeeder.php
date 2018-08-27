@@ -15,8 +15,8 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'name' => 'Pizza carbonara',
             'marca' => 'Telepizza',
-            'approved' => true
-           // 'user_id' => User::All()->where('name','nestor')->first()->id
+            'approved' => true,
+            'user_id' => User::All()->where('name','nestor')->first()->id
         ]);
         DB::table('products')->insert([
             'name' => 'Pizza barbacoa',

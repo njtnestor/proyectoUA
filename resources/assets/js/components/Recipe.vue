@@ -2,7 +2,7 @@
     <div v-if="recipe" class="container">
         <div v-if="recipe" class="row row-gen ">
             <div class="col-lg-4 col-sm-6">
-                <img class="img-center" :src=recipe.image alt="">
+                <img class="imgTitle" :src=recipe.image alt="">
             </div>
             <div class="col-lg-8 col-sm-5 ">
                 <div class="row ">     
@@ -29,10 +29,9 @@
 
             </div>
         </div>
-        <div class="row-gen2">
-            <div class="row">
-                <h3>Ingredients({{recipe.serving}} servings)</h3>
-            </div>
+        <div class="row-comment"> 
+                <h4>Ingredients({{recipe.serving}} servings)</h4>
+                <hr>
             <div class="row" >
                 <ul>
                     <li v-for="(ingredient,index) in recipe.ingredients" :key='index'>
@@ -41,10 +40,9 @@
                 </ul>
             </div>
         </div>
-        <div class="row-gen2">
-            <div class="row">
-                <h3>Elaboration</h3>
-            </div>
+        <div class="row-comment"> 
+                <h4>Elaboration</h4>
+                <hr>
             <div class="row" >
                 <ul>
                     <li v-for="(step,index) in recipe.steps" :key='index'>
@@ -54,6 +52,32 @@
                         
                 </ul>
                 
+            </div>
+        </div>
+        <div class="row-comment">
+            <h4>Comments</h4>
+            <hr>
+            <div v-if="authenticated" class="row">
+                <b-form-textarea v-on:click.native="commentbutton=true" v-model="textNewComment" :no-resize=true  placeholder="Insert here your comment..." :rows="2" ></b-form-textarea>
+                <div class="everyelem">
+                    <b-button v-if="commentbutton" @click="createComment()" class="btn btn-primary buttoncomment">Comment</b-button>                
+                </div>
+                          
+            </div>
+            <hr>
+            <div v-for="(comment,index) in comments" :key='index' class="row">
+                <div class="col-2">
+                    <img rounded="circle" class="img-center2" width="50" height="50" :src="img" alt="">
+                </div>
+                <div class="col-10">
+
+                    <div class="row">
+                        <li >
+                            <h5>{{comment.user_id.name}}</h5>
+                            <p>{{comment.description}}</p>
+                        </li> 
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -70,11 +94,18 @@ export default {
 
     data(){
         return{
+            textNewComment:null,
+            authenticated: auth.check(),
+            commentbutton:false,
             handlike:false,
             handdislike:false,
             positiveVotes:12,
             negativeVotes:5,
-            recipe:''
+            recipe:'',
+            comments:[
+                
+            ],
+            img:'https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg'
         };
     },
     computed:{
@@ -94,38 +125,66 @@ export default {
                 console.log("has votado negativamente!")
             }
             
+        },
+        createComment(){
+            let data={
+                description:this.textNewComment
+            };
+            axios.post('/api/recipes/'+this.$route.params.id+'/comments',data)
+                .then(({data}) => {
+                        this.comments=data.data
+                })
         }
     },
     async beforeMount(){
         axios.get('/api/recipes/'+this.$route.params.id)
             .then(({data}) => {
                 this.recipe=data.data
+                this.comments=data.data.comments
             })
     }
     
 }
 </script>
 <style scoped>
+    .imgTitle{
+        border: solid 4px black;
+        border-radius: 6px;
+        height: 250px;
+        margin:10px;
+        width:100%;
+        min-height:100px;
+    }
+    .everyelem{
+       width: 100%;
+    }
+    .buttoncomment{
+        float: right;
+        margin-top:4px;
+        background-color: #007bff !important;
+        border-color: #007bff !important;
+    }
+    li{
+        list-style:none;
+    }
     .row-gen{
         background-color: white;
         margin-top:40px;
         box-shadow: 0 0 0 2px #eaeaea;
     }
-    .img-center{
+    
+     .img-center2{
         
-        /*width: 360px;*/
-        height: 250px;
+        
         display: block;
         margin: 0 auto;
-        padding:20px;
-        width:100%;
-        min-height:100px;
+        
     }
     h1{
-        font-size:4vw;
+        font-size:60px;
     }
     h3{
-        font-size:2vw;
+        font-size:30px;
     }
     .row-gen2{
         background-color: white;
@@ -133,6 +192,17 @@ export default {
         box-shadow: 0 0 0 2px #eaeaea;
         margin-right: 15px;
         margin-left: 15px;
+    }
+    .row-comment{
+        background-color: white;
+        margin-top:20px;
+        box-shadow: 0 0 0 2px #eaeaea;
+        margin-right: 15px;
+        margin-left: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+        padding-top:15px;
     }
     .row{
         margin-right: 15px;

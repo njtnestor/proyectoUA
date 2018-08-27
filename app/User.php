@@ -35,6 +35,9 @@ class User extends Authenticatable
     public function recipes(){
         return $this->hasMany('App\Recipe');
     }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
     /*public function products_pivot(){
         return $this->belongsToMany('App\Product','recipes');
 

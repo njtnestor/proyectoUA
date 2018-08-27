@@ -28,13 +28,17 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/productsByUser','API\ProductController@indexByUser');
     Route::get('/recipesByUser','API\RecipeController@indexByUser');
     Route::get('/productsByNotApproved','API\ProductController@indexByNotApproved');
-
+    Route::post('/recipes/{id}/comments','API\CommentController@store');
 });
 Route::resource('products', 'API\ProductController')->only([
     'index', 'show'
 ]);
+
+Route::get('/productsApproved', 'API\ProductController@indexApproved');
 Route::resource('recipes', 'API\RecipeController')->only([
     'index', 'show'
 ]);
 Route::get('products/{id}/recipes','API\RecipeController@indexByProductId');//no incluye el mejor/recomendado/outstanding
 Route::get('products/{id}/recipes/outstanding','API\RecipeController@showOutstanding');
+
+//Route::get('/recipes/{id}/comments', 'API\ProductController');

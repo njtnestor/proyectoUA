@@ -18,6 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('marca');
             $table->boolean('approved');
+            $table->integer('votes_p')->default(0);
+            $table->integer('votes_n')->default(0);
+            $table->integer('rating')->default(0);
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->unique(["name", "marca"], 'uq_columns');

@@ -13,8 +13,8 @@
       <tr v-for="(product,index) in products" :key='index' track-by="id">
         <td>{{product.name}}</td>
         <td>{{product.marca}}</td>
-        <td></td>
-        <td></td>
+        <td>{{product.votes_p}}</td>
+        <td>{{product.votes_n}}</td>
         <td>{{product.approved}}</td>
       </tr>
     </tbody>
