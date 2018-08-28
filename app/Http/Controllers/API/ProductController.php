@@ -29,7 +29,15 @@ class ProductController extends Controller
     }
   
     public function indexByNotApproved(){
-        return ProductResource::collection(Product::get()->where('approved','=',0));
+
+      $id=auth()->user()->id;
+      
+      $products = Product::with('user_product_votes')->whereDoesntHave('user_product_votes', function($query) use ($id) {
+        $query->where('user_id', $id);
+      })->get();
+
+      return ProductResource::collection($products->where('approved','=',0));
+      //return ProductResource::collection(Product::get()->where('approved','=',0));
     }
     public function store(Request $request)
     {
@@ -42,7 +50,20 @@ class ProductController extends Controller
 
       return new ProductResource($product);
     }
-
+    public function voteup(Request $request,$id){
+      $product = Product::find($id);
+      $product->votes_p = $product->votes_p + 1;
+      $product->save();
+      $product->user_product_votes()->attach(auth()->user()->id);
+      return new ProductResource($product);
+    }
+    public function votedown(Request $request,$id){
+      $product = Product::find($id);
+      $product->votes_p = $product->votes_n + 1;
+      $product->save();
+      $product->user_product_votes()->attach(auth()->user()->id);
+      return new ProductResource($product);
+    }
     public function prueba()
     {
       return auth()->user();

@@ -38,6 +38,9 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany('App\Comment');
     }
+    public function product_user_votes(){
+        return $this->belongsToMany('App\Product','users_products_votes')->withTimestamps();
+    }
     /*public function products_pivot(){
         return $this->belongsToMany('App\Product','recipes');
 

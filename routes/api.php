@@ -29,6 +29,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/recipesByUser','API\RecipeController@indexByUser');
     Route::get('/productsByNotApproved','API\ProductController@indexByNotApproved');
     Route::post('/recipes/{id}/comments','API\CommentController@store');
+    Route::post('/products/{id}/voteup','API\ProductController@voteup');
+    Route::post('/products/{id}/votedown','API\ProductController@votedown');
 });
 Route::resource('products', 'API\ProductController')->only([
     'index', 'show'

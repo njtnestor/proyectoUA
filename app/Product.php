@@ -17,4 +17,7 @@ class Product extends Model
         return $this->belongsToMany('App\User','recipes');
 
     }*/
+    public function user_product_votes(){
+        return $this->belongsToMany('App\User','users_products_votes')->withTimestamps();
+    }
 }

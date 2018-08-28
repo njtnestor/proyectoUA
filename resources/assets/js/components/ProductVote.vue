@@ -14,8 +14,8 @@
                     <td>{{product.name}}</td>
                     <td>{{product.marca}}</td>
                     <td>
-                        <font-awesome-icon class="hand" :class="{like:handlike.includes(index)}" size="lg" :icon="['fas', 'thumbs-up']" @click="like(index)"/>
-                        <font-awesome-icon class="hand" :class="{dislike:handdislike.includes(index)}" size="lg" :icon="['fas', 'thumbs-down']"  @click="dislike(index)"/>
+                        <font-awesome-icon class="hand" :class="{like:handlike.includes(index)}" size="lg" :icon="['fas', 'thumbs-up']" @click="like(index,product.id)"/>
+                        <font-awesome-icon class="hand" :class="{dislike:handdislike.includes(index)}" size="lg" :icon="['fas', 'thumbs-down']"  @click="dislike(index,product.id)"/>
                     </td>
                     <td></td>
                 </tr>
@@ -42,19 +42,25 @@ export default {
             })   
     },
     methods:{
-        like(index){
+        like(index,productId){
             if(this.handdislike.includes(index)==false && this.handlike.includes(index)==false){
                 this.handlike.push(index)
-                console.log("has votado positivamente!")
+                axios.post('api/products/'+productId+'/voteup')
+                .then(({data}) => { 
+                    console.log("has votado positivamente!")
+                })  
+                
             }
             
         },
-        dislike(index){
+        dislike(index,productId){
             if(this.handlike.includes(index)==false && this.handdislike.includes(index)==false){
                 this.handdislike.push(index)
-                console.log("has votado negativamente!")
-            }
-            
+                axios.post('api/products/'+productId+'/votedown')
+                .then(({data}) => {
+                    console.log("has votado negativamente!")
+                })    
+            }  
         }
     },
 }

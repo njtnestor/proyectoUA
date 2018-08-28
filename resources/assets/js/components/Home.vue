@@ -8,15 +8,15 @@
         </div>
         <div class="row">
             <div class="col">
-                <img class="img-center" src="/images/cuchillo-tenedor.png" alt="">
+                <b-img class="img-center" src="/images/cuchillo-tenedor.png" alt=""/>
                 <h1>Crea</h1>
             </div>
             <div class="col">
-                <img class="img-center" src="/images/pollo.png" alt="">
+                <b-img class="img-center" src="/images/pollo.png" alt=""/>
                 <h1>Cocina</h1>
             </div>
             <div class="col">
-                <img class="img-center" src="/images/pizza.png" alt="">
+                <b-img class="img-center" src="/images/pizza.png" alt=""/>
                 <h1>Prueba</h1>
             </div>
 

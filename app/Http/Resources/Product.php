@@ -23,6 +23,7 @@ class Product extends JsonResource
             'approved' => $this->approved,
             'votes_p' => $this->votes_p,
             'votes_n' => $this->votes_n,
+            'rating' => $this->rating,        
             'recipes' => RecipeResource::collection($this->whenLoaded('recipes'))
         ];
     }

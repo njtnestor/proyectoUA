@@ -51419,44 +51419,52 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _vm._m(0)
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col" },
+        [
+          _c("b-img", {
+            staticClass: "img-center",
+            attrs: { src: "/images/cuchillo-tenedor.png", alt: "" }
+          }),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Crea")])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col" },
+        [
+          _c("b-img", {
+            staticClass: "img-center",
+            attrs: { src: "/images/pollo.png", alt: "" }
+          }),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Cocina")])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col" },
+        [
+          _c("b-img", {
+            staticClass: "img-center",
+            attrs: { src: "/images/pizza.png", alt: "" }
+          }),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Prueba")])
+        ],
+        1
+      )
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col" }, [
-        _c("img", {
-          staticClass: "img-center",
-          attrs: { src: "/images/cuchillo-tenedor.png", alt: "" }
-        }),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Crea")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _c("img", {
-          staticClass: "img-center",
-          attrs: { src: "/images/pollo.png", alt: "" }
-        }),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Cocina")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col" }, [
-        _c("img", {
-          staticClass: "img-center",
-          attrs: { src: "/images/pizza.png", alt: "" }
-        }),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Prueba")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -55203,16 +55211,24 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     }(),
 
     methods: {
-        like: function like(index) {
+        like: function like(index, productId) {
             if (this.handdislike.includes(index) == false && this.handlike.includes(index) == false) {
                 this.handlike.push(index);
-                console.log("has votado positivamente!");
+                axios.post('api/products/' + productId + '/voteup').then(function (_ref3) {
+                    var data = _ref3.data;
+
+                    console.log("has votado positivamente!");
+                });
             }
         },
-        dislike: function dislike(index) {
+        dislike: function dislike(index, productId) {
             if (this.handlike.includes(index) == false && this.handdislike.includes(index) == false) {
                 this.handdislike.push(index);
-                console.log("has votado negativamente!");
+                axios.post('api/products/' + productId + '/votedown').then(function (_ref4) {
+                    var data = _ref4.data;
+
+                    console.log("has votado negativamente!");
+                });
             }
         }
     }
@@ -55248,7 +55264,7 @@ var render = function() {
                       attrs: { size: "lg", icon: ["fas", "thumbs-up"] },
                       on: {
                         click: function($event) {
-                          _vm.like(index)
+                          _vm.like(index, product.id)
                         }
                       }
                     }),
@@ -55259,7 +55275,7 @@ var render = function() {
                       attrs: { size: "lg", icon: ["fas", "thumbs-down"] },
                       on: {
                         click: function($event) {
-                          _vm.dislike(index)
+                          _vm.dislike(index, product.id)
                         }
                       }
                     })
@@ -55386,7 +55402,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.tab[data-v-22ef5402]{\n    margin-top:20px;\n}\n", ""]);
+exports.push([module.i, "\n.tab[data-v-22ef5402]{\n    margin-top:20px;\n}\n.fondotab[data-v-22ef5402]{\n    background-color: white;\n}\n", ""]);
 
 // exports
 
@@ -56108,43 +56124,51 @@ var render = function() {
       _c("h2", [_vm._v("Profile")]),
       _vm._v(" "),
       _c(
-        "b-tabs",
+        "b-card",
+        { attrs: { "no-body": "" } },
         [
           _c(
-            "b-tab",
-            { attrs: { title: "Data", active: "" } },
+            "b-tabs",
+            { attrs: { card: "" } },
             [
-              _c("br"),
-              _c("h5", [_vm._v("Profile settings")]),
+              _c(
+                "b-tab",
+                { attrs: { title: "Data", active: "" } },
+                [
+                  _c("br"),
+                  _c("h5", [_vm._v("Profile settings")]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _c("ProfileData")
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("br"),
-              _c("ProfileData")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "b-tab",
-            { attrs: { title: "Products" } },
-            [
-              _c("br"),
-              _c("h5", [_vm._v("My products")]),
+              _c(
+                "b-tab",
+                { attrs: { title: "Products" } },
+                [
+                  _c("br"),
+                  _c("h5", [_vm._v("My products")]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _c("ProfileProducts")
+                ],
+                1
+              ),
               _vm._v(" "),
-              _c("br"),
-              _c("ProfileProducts")
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "b-tab",
-            { attrs: { title: "Recipes" } },
-            [
-              _c("br"),
-              _c("h5", [_vm._v("My recipes")]),
-              _vm._v(" "),
-              _c("br"),
-              _c("ProfileRecipes")
+              _c(
+                "b-tab",
+                { attrs: { title: "Recipes" } },
+                [
+                  _c("br"),
+                  _c("h5", [_vm._v("My recipes")]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _c("ProfileRecipes")
+                ],
+                1
+              )
             ],
             1
           )
@@ -102752,41 +102776,7 @@ var render = function() {
             "b-collapse",
             { attrs: { "is-nav": "", id: "nav_collapse" } },
             [
-              _c(
-                "b-navbar-nav",
-                [
-                  _c(
-                    "b-nav-item",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-link nav-links",
-                          attrs: { to: "/dashboard" }
-                        },
-                        [_vm._v("Dashboard")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "b-nav-item",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-link nav-links",
-                          attrs: { to: "/about" }
-                        },
-                        [_vm._v("About")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
+              _c("b-navbar-nav"),
               _vm._v(" "),
               _c("b-navbar-nav", { staticClass: "ml-auto" }, [
                 _vm.authenticated && _vm.user
