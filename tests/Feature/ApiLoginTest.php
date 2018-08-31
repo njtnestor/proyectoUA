@@ -19,7 +19,7 @@ class ApiLoginTest extends TestCase
             'username' => 'nestor@gmail.com',
             'password' => 'secret',
         ];
-        $response = $this->json('POST', '/api/login', ['username' => 'nestor@gmail.com','password' => 'secret']);
+        $response = $this->json('POST', '/api/login', $body);
 
         $response->assertStatus(200);
         $response->assertJsonStructure(['token','user','status']);

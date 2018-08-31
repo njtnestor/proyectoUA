@@ -15,7 +15,9 @@
         <td>{{product.marca}}</td>
         <td>{{product.votes_p}}</td>
         <td>{{product.votes_n}}</td>
-        <td>{{product.approved}}</td>
+        <td><font-awesome-icon v-if="product.approved==1" style="color:green" size="sm" :icon="['fas', 'check']" />
+        <font-awesome-icon v-else style="color:red" size="sm" :icon="['fas', 'times']" />
+        </td>
       </tr>
     </tbody>
   </table>
