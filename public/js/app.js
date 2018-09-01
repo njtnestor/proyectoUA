@@ -51958,7 +51958,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var data = _ref.data;
 
                 auth.login(data.token, data.user);
-                _this.$router.push('/dashboard');
+                _this.$router.push('/');
             }).catch(function (_ref2) {
                 var response = _ref2.response;
 

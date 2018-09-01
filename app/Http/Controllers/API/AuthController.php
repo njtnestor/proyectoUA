@@ -17,11 +17,11 @@ class AuthController extends Controller
             'email' => request('email'),
             'password' => bcrypt(request('password'))
         ]);
-        
+        $oauth_client = OauthClients::findOrFail(2);
         $data = [
             'grant_type' => 'password',
             'client_id' => '2',
-            'client_secret' =>  env('CLIENT_SECRET'),
+            'client_secret' => $oauth_client->secret,
             'username' => request('email'),
             'password' => request('password'),
             

@@ -45,7 +45,7 @@ export default {
             axios.post('/api/register', data)
                 .then(({data}) => {
                     auth.login(data.token, data.user);
-                    this.$router.push('/dashboard');
+                    this.$router.push('/');
                 })
                 .catch(({response}) => {                    
                     alert(response.data.message);
