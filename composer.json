@@ -48,7 +48,7 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
-            "php artisan migrate --force"
+            "php artisan migrate --seed --force"
         ],
 
         "postinstall":["npm run production"
