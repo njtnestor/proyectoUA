@@ -25,7 +25,7 @@ class CreateRecipesTable extends Migration
             $table->unsignedInteger('product_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
-            $table->unique(["user_id", "product_id"], 'uq_columns');
+            $table->unique(["user_id", "product_id"], 'uq_columns_recipes');
             $table->timestamps();
         });
     }

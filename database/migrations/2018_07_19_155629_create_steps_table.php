@@ -19,7 +19,7 @@ class CreateStepsTable extends Migration
             $table->string('description','1500');
             $table->unsignedInteger('recipe_id');
             $table->foreign('recipe_id')->references('id')->on('recipes');
-            $table->unique(["step", "recipe_id"], 'uq_columns');
+            $table->unique(["step", "recipe_id"], 'uq_columns_steps');
         });
     }
 

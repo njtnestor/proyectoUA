@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('rating')->default(0);
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unique(["name", "marca"], 'uq_columns');
+            $table->unique(["name", "marca"], 'uq_columns_products');
             $table->timestamps();
         });
     }
