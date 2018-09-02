@@ -50,6 +50,7 @@
             "@php artisan package:discover",
             "php artisan migrate:refresh --force"
         ],
+        
         "postinstall":["npm run production"
         ] 
     },
