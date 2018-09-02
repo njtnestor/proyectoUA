@@ -47,11 +47,11 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
-        ],
-        "postinstall":["npm run production",
+            "@php artisan package:discover",
             "php artisan passport:install",
             "php artisan migrate:refresh --seed --force"
+        ],
+        "postinstall":["npm run production"
         ] 
     },
     "config": {
