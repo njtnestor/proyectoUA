@@ -49,8 +49,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover",
             "php artisan migrate:fresh --seed --force",
-            "php artisan passport:install",
-            "npm run prod"
+            "php artisan passport:install"
         ],
 
         "postinstall":["npm run prod"
