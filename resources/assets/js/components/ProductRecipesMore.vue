@@ -19,7 +19,6 @@
                 <b-button :disabled="pagination.next_pagination_disabled" class="btn btn-primary" @click="nextPage()">Next</b-button>      
             </div> 
         </div>
-        {{recipes}}
     </div>
 </template>
 
@@ -48,7 +47,8 @@ export default {
     },
     methods:{
         callApi(direction){
-            axios.get(direction.replace('http:',''))
+            
+            axios.get(direction)
             .then(({data}) => {
                 this.recipes=data
                 this.pagination.current_page=this.recipes.meta.current_page
@@ -79,11 +79,17 @@ export default {
             })
         },
         prevPage(){
-            this.callApi(this.pagination.prev_page_url)
+            var n= this.pagination.prev_page_url.indexOf("/api");
+            var dircustom= this.pagination.prev_page_url.substring(n);
+
+            this.callApi(dircustom)
             console.log("paginationPrev!")
         },
         nextPage(){
-            this.callApi(this.pagination.next_page_url)
+            var n= this.pagination.next_page_url.indexOf("/api");
+            var dircustom= this.pagination.next_page_url.substring(n);
+
+            this.callApi(dircustom)
             console.log("paginationNext!")
             
         },

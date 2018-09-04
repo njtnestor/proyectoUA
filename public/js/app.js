@@ -53903,7 +53903,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         callApi: function callApi(direction) {
             var _this = this;
 
-            axios.get(direction.replace('http:', '')).then(function (_ref) {
+            axios.get(direction).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.recipes = data;
@@ -53933,11 +53933,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             });
         },
         prevPage: function prevPage() {
-            this.callApi(this.pagination.prev_page_url);
+            var n = this.pagination.prev_page_url.indexOf("/api");
+            var dircustom = this.pagination.prev_page_url.substring(n);
+
+            this.callApi(dircustom);
             console.log("paginationPrev!");
         },
         nextPage: function nextPage() {
-            this.callApi(this.pagination.next_page_url);
+            var n = this.pagination.next_page_url.indexOf("/api");
+            var dircustom = this.pagination.next_page_url.substring(n);
+
+            this.callApi(dircustom);
             console.log("paginationNext!");
         }
     },
@@ -53950,7 +53956,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                             this.callApi('/api/products/' + this.$route.params.id + '/recipes');
 
                         case 1:
-                        case 'end':
+                        case "end":
                             return _context.stop();
                     }
                 }
