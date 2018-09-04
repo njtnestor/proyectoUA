@@ -50,10 +50,7 @@
             "@php artisan package:discover",
             "php artisan migrate:fresh --seed --force",
             "php artisan passport:install"
-        ],
-
-        "postinstall":["npm run prod"
-        ] 
+        ]
     },
     "config": {
         "preferred-install": "dist",
