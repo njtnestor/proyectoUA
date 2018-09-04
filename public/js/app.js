@@ -53937,14 +53937,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             var dircustom = this.pagination.prev_page_url.substring(n);
 
             this.callApi(dircustom);
-            console.log("paginationPrev2!");
+            console.log("paginationPrev3!");
         },
         nextPage: function nextPage() {
             var n = this.pagination.next_page_url.indexOf("/api");
             var dircustom = this.pagination.next_page_url.substring(n);
 
             this.callApi(dircustom);
-            console.log("paginationNext2!");
+            console.log("paginationNext3!");
         }
     },
     beforeMount: function () {
