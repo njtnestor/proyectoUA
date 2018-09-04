@@ -83,14 +83,14 @@ export default {
             var dircustom= this.pagination.prev_page_url.substring(n);
 
             this.callApi(dircustom)
-            console.log("paginationPrev3!")
+            console.log("paginationPrev4!")
         },
         nextPage(){
             var n= this.pagination.next_page_url.indexOf("/api");
             var dircustom= this.pagination.next_page_url.substring(n);
 
             this.callApi(dircustom)
-            console.log("paginationNext3!")
+            console.log("paginationNext4!")
             
         },
         
