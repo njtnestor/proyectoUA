@@ -47,7 +47,7 @@ export default {
     },
     methods:{
         callApi(direction){
-            
+            console.log(direction)
             axios.get(direction)
             .then(({data}) => {
                 this.recipes=data

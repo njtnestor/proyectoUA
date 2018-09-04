@@ -53874,7 +53874,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53903,6 +53902,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         callApi: function callApi(direction) {
             var _this = this;
 
+            console.log(direction);
             axios.get(direction).then(function (_ref) {
                 var data = _ref.data;
 
@@ -54071,8 +54071,7 @@ var render = function() {
             ],
             1
           )
-        ]),
-        _vm._v("\n    " + _vm._s(_vm.recipes) + "\n")
+        ])
       ])
     : _vm._e()
 }
