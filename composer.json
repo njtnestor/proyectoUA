@@ -50,10 +50,10 @@
             "@php artisan package:discover",
             "php artisan migrate:fresh --seed --force",
             "php artisan passport:install",
-            "npm run production"
+            "npm run prod"
         ],
 
-        "postinstall":["npm run production"
+        "postinstall":["npm run prod"
         ] 
     },
     "config": {
