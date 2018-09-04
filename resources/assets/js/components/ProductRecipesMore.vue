@@ -19,6 +19,7 @@
                 <b-button :disabled="pagination.next_pagination_disabled" class="btn btn-primary" @click="nextPage()">Next</b-button>      
             </div> 
         </div>
+        {{recipes}}
     </div>
 </template>
 
@@ -42,16 +43,12 @@ export default {
                 per_p:null,
                 total_r:null,
                 last_page:null,
-            },
-            imgURL1: 'http://pizzerianenina.com/wp-content/uploads/2015/09/pizzas.jpg',
-            imgURL2:'http://revistaelconocedor.com/wp-content/uploads/2017/04/shutterstock_378226756-1024x736.jpg',
-            imgURL3:'http://images.citiservi.es//business/ab/8c/be/big_tomaspizza.jpg',
-            imgURL4:'https://pizzavegana.com/wp-content/uploads/2017/01/02-100-VEGETALES-Y-SIN-COLESTEROL.jpg'
+            }
         };
     },
     methods:{
         callApi(direction){
-            axios.get(direction)
+            axios.get(direction.replace('http:',''))
             .then(({data}) => {
                 this.recipes=data
                 this.pagination.current_page=this.recipes.meta.current_page

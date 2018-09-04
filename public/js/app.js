@@ -53874,6 +53874,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53894,11 +53895,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                 per_p: null,
                 total_r: null,
                 last_page: null
-            },
-            imgURL1: 'http://pizzerianenina.com/wp-content/uploads/2015/09/pizzas.jpg',
-            imgURL2: 'http://revistaelconocedor.com/wp-content/uploads/2017/04/shutterstock_378226756-1024x736.jpg',
-            imgURL3: 'http://images.citiservi.es//business/ab/8c/be/big_tomaspizza.jpg',
-            imgURL4: 'https://pizzavegana.com/wp-content/uploads/2017/01/02-100-VEGETALES-Y-SIN-COLESTEROL.jpg'
+            }
         };
     },
 
@@ -53906,7 +53903,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         callApi: function callApi(direction) {
             var _this = this;
 
-            axios.get(direction).then(function (_ref) {
+            axios.get(direction.replace('http:', '')).then(function (_ref) {
                 var data = _ref.data;
 
                 _this.recipes = data;
@@ -54068,7 +54065,8 @@ var render = function() {
             ],
             1
           )
-        ])
+        ]),
+        _vm._v("\n    " + _vm._s(_vm.recipes) + "\n")
       ])
     : _vm._e()
 }
