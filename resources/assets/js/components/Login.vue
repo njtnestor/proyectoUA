@@ -1,14 +1,15 @@
 <template>
     <div class="login">
-        <h1>Inicia sesion</h1>
-        <input type="text" class="form-control" placeholder="Introduce email" name="username" v-model="username">
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" v-model="password">
+        <h1>Login</h1>
+        <input type="text" class="form-control" placeholder="Enter email" name="username" v-model="username">
+        <input type="password" class="form-control" placeholder="Enter contraseña" name="password" v-model="password">
         <button-spinner v-on:click.native="login" class="btn btn-primary submit"
 	        :is-loading="isLoading" 
 	        :status="status">
-            Iniciar sesión
+            Lets go!
 	        
         </button-spinner>
+        <h7><router-link to="/registro"> Create an account</router-link></h7>
 
     </div>
 </template>

@@ -9,15 +9,15 @@
         <div class="row">
             <div class="col">
                 <b-img class="img-center" src="/images/cuchillo-tenedor.png" alt=""/>
-                <h1>Crea</h1>
+                <h1>Create</h1>
             </div>
             <div class="col">
                 <b-img class="img-center" src="/images/pollo.png" alt=""/>
-                <h1>Cocina</h1>
+                <h1>Cook</h1>
             </div>
             <div class="col">
                 <b-img class="img-center" src="/images/pizza.png" alt=""/>
-                <h1>Prueba</h1>
+                <h1>Try</h1>
             </div>
 
         </div>

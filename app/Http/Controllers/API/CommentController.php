@@ -16,6 +16,6 @@ class CommentController extends Controller
             'user_id' => auth()->user()->id,
             'recipe_id' => $id
         ]);
-        return CommentResource::collection(Comment::get());
+        return CommentResource::collection(Comment::get()->where('user_id',auth()->user()->id));
     }
 }

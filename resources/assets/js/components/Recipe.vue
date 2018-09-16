@@ -20,8 +20,8 @@
                     <h3>
                         <div @click.native="click">
                             <!--<star-rating v-bind:increment="1" :show-rating=false :read-only=false :rating=0 v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="40"></star-rating>-->
-                            <font-awesome-icon class="hand" v-bind:class="{like:handlike}" size="sm" :icon="['fas', 'thumbs-up']" @click="like()" />{{positiveVotes}}
-                            <font-awesome-icon class="hand" v-bind:class="{dislike:handdislike}" size="sm" :icon="['fas', 'thumbs-down']" @click="dislike()" />{{negativeVotes}}
+                            <font-awesome-icon class="hand" v-bind:class="{like:handlike}" size="sm" :icon="['fas', 'thumbs-up']" @click="like()" />{{recipe.votes_p}}
+                            <font-awesome-icon class="hand" v-bind:class="{dislike:handdislike}" size="sm" :icon="['fas', 'thumbs-down']" @click="dislike()" />{{recipe.votes_n}}
                         </div>
                     </h3>
                     
@@ -99,8 +99,8 @@ export default {
             commentbutton:false,
             handlike:false,
             handdislike:false,
-            positiveVotes:12,
-            negativeVotes:5,
+            positiveVotes:0,
+            negativeVotes:0,
             recipe:'',
             comments:[
                 
@@ -115,6 +115,7 @@ export default {
         like(){
             if(this.handdislike==false && this.handlike==false){
                 this.handlike=true;
+                this.recipe.votes_p=this.recipe.votes_p+1;
                 console.log("has votado positivamente!")
             }
             
@@ -122,6 +123,7 @@ export default {
         dislike(){
             if(this.handlike==false && this.handdislike==false){
                 this.handdislike=true;
+                this.recipe.votes_n=this.recipe.votes_n+1;
                 console.log("has votado negativamente!")
             }
             
@@ -141,6 +143,7 @@ export default {
             .then(({data}) => {
                 this.recipe=data.data
                 this.comments=data.data.comments
+                
             })
     }
     

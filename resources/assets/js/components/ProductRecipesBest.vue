@@ -6,45 +6,47 @@
             <div class="col-lg-8 col-sm-5 ">
                
                 <div class="row ">     
-                    <h1>Best Recipe</h1>         
+                    <h1>Best Recipe</h1> 
+                            
                 </div>
+                
                 <div class="row">
-                    <h3>By:&nbsp</h3>
+                    <!--<h3>By:&nbsp</h3>-->
                     <h3>
                         <div v-if="destacada">
-                            {{destacada.user.name}}
+                            {{destacada.product.name}}, {{destacada.product.marca}}
                         </div>
                     </h3>
                     
                 </div>
+                <hr>
                 <div class="row">
-                    <h3>Created at:&nbsp</h3>
                     <h3>
+                        <div v-if="destacada">
+                            <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='destacada.rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="35"></star-rating>    
+                        </div>
+                    </h3>
+                </div>
+                <div class="row">
+                    <h4>Created at:&nbsp</h4>
+                    <h4>
                         <div v-if="destacada">
                             {{getDate}}     
                         </div>
-                    </h3>
+                    </h4>
                 </div>
+                
                 <div class="row">
-                    <h3>
-                        <div v-if="destacada">
-                            <star-rating class="everyelem" v-bind:increment="1" :show-rating=false :read-only=true :rating='destacada.rating' v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="50"></star-rating>
-                        </div>
-                    </h3>
-                </div>
-                <div class="row">
-                    <b-button class="btn btn-primary" :to="{name: 'newRecipe', params: { id : $route.params.id}}">New recipe</b-button>
+                    <h6>Do you think you can get a better recipe?<router-link :to="{name: 'newRecipe', params: { id : $route.params.id}}">Create a new recipe</router-link></h6>
                 </div>
             </div>
-
-        </router-link>
-        <div class="no-recipe" v-else>
-            
-            <h2>Aun no existen recetas de este producto. Se el primero en crear una.</h2>
-            <div class="everyelem">
-                <b-button class="btn btn-primary " :to="{name: 'newRecipe', params: { id : $route.params.id}}">New recipe</b-button>
-            </div>
-        </div>    
+    </router-link>
+    <div class="row row-gen" v-else>
+        <h2>There are still no recipes for this product. Be the first to <router-link :to="{name: 'newRecipe', params: { id : $route.params.id}}"> create one of them.</router-link></h2>
+        <div class="everyelem">
+            <!--<b-button class="btn btn-primary " :to="{name: 'newRecipe', params: { id : $route.params.id}}">New recipe</b-button>-->
+        </div>
+    </div>    
     
 </template>
 
@@ -151,5 +153,8 @@ export default {
      .no-recipe{
         margin-top:40px;
         box-shadow: 0 0 0 2px #eaeaea;
+     }
+     a {
+        text-decoration: none;
      }
 </style>

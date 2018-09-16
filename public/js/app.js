@@ -51429,7 +51429,7 @@ var render = function() {
             attrs: { src: "/images/cuchillo-tenedor.png", alt: "" }
           }),
           _vm._v(" "),
-          _c("h1", [_vm._v("Crea")])
+          _c("h1", [_vm._v("Create")])
         ],
         1
       ),
@@ -51443,7 +51443,7 @@ var render = function() {
             attrs: { src: "/images/pollo.png", alt: "" }
           }),
           _vm._v(" "),
-          _c("h1", [_vm._v("Cocina")])
+          _c("h1", [_vm._v("Cook")])
         ],
         1
       ),
@@ -51457,7 +51457,7 @@ var render = function() {
             attrs: { src: "/images/pizza.png", alt: "" }
           }),
           _vm._v(" "),
-          _c("h1", [_vm._v("Prueba")])
+          _c("h1", [_vm._v("Try")])
         ],
         1
       )
@@ -51668,6 +51668,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51729,7 +51730,7 @@ var render = function() {
     "div",
     { staticClass: "login" },
     [
-      _c("h1", [_vm._v("Inicia sesion")]),
+      _c("h1", [_vm._v("Login")]),
       _vm._v(" "),
       _c("input", {
         directives: [
@@ -51741,11 +51742,7 @@ var render = function() {
           }
         ],
         staticClass: "form-control",
-        attrs: {
-          type: "text",
-          placeholder: "Introduce email",
-          name: "username"
-        },
+        attrs: { type: "text", placeholder: "Enter email", name: "username" },
         domProps: { value: _vm.username },
         on: {
           input: function($event) {
@@ -51769,7 +51766,7 @@ var render = function() {
         staticClass: "form-control",
         attrs: {
           type: "password",
-          placeholder: "Introduce contraseña",
+          placeholder: "Enter contraseña",
           name: "password"
         },
         domProps: { value: _vm.password },
@@ -51794,7 +51791,17 @@ var render = function() {
             }
           }
         },
-        [_vm._v("\n            Iniciar sesión\n\t        \n        ")]
+        [_vm._v("\n            Lets go!\n\t        \n        ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "h7",
+        [
+          _c("router-link", { attrs: { to: "/registro" } }, [
+            _vm._v(" Create an account")
+          ])
+        ],
+        1
       )
     ],
     1
@@ -52414,7 +52421,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.border[data-v-33070b1e]{\n    background-color: red;\n}\nh1[data-v-33070b1e]{\n    padding-top: 10px;\n    font-size: 80px;\n}\n.row-gen[data-v-33070b1e]{\n    background-color: white;\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.col2bor[data-v-33070b1e]{\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-33070b1e]{\n    \n    /*width: 360px;*/\n    height: 340px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.row .flex[data-v-33070b1e] {\n    /*display: flex;\n    align-items: center;*/\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    width: 100%;\n}\n.everyelem[data-v-33070b1e]{\n    display: block;\n    margin: 0 auto;\n}\n.center-btn[data-v-33070b1e]{\n    display: block;\n    margin: 0 auto;\n    background-color: #007bff !important;\n    border-color: #007bff !important;\n}\nh1[data-v-33070b1e]{\n    font-size:5vw;\n}\nh3[data-v-33070b1e]{\n    font-size:2vw;\n}\n.row-gen[data-v-33070b1e]:hover{\n    -webkit-box-shadow: 0 0 0 2px #46427c;\n            box-shadow: 0 0 0 2px #46427c;\n    cursor: pointer;\n}\n.no-recipe[data-v-33070b1e]{\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n", ""]);
+exports.push([module.i, "\n.border[data-v-33070b1e]{\n    background-color: red;\n}\nh1[data-v-33070b1e]{\n    padding-top: 10px;\n    font-size: 80px;\n}\n.row-gen[data-v-33070b1e]{\n    background-color: white;\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.col2bor[data-v-33070b1e]{\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\n.img-center[data-v-33070b1e]{\n    \n    /*width: 360px;*/\n    height: 340px;\n    display: block;\n    margin: 0 auto;\n    padding:20px;\n    width:100%;\n    min-height:100px;\n}\n.row .flex[data-v-33070b1e] {\n    /*display: flex;\n    align-items: center;*/\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    width: 100%;\n}\n.everyelem[data-v-33070b1e]{\n    display: block;\n    margin: 0 auto;\n}\n.center-btn[data-v-33070b1e]{\n    display: block;\n    margin: 0 auto;\n    background-color: #007bff !important;\n    border-color: #007bff !important;\n}\nh1[data-v-33070b1e]{\n    font-size:5vw;\n}\nh3[data-v-33070b1e]{\n    font-size:2vw;\n}\n.row-gen[data-v-33070b1e]:hover{\n    -webkit-box-shadow: 0 0 0 2px #46427c;\n            box-shadow: 0 0 0 2px #46427c;\n    cursor: pointer;\n}\n.no-recipe[data-v-33070b1e]{\n    margin-top:40px;\n    -webkit-box-shadow: 0 0 0 2px #eaeaea;\n            box-shadow: 0 0 0 2px #eaeaea;\n}\na[data-v-33070b1e] {\n    text-decoration: none;\n}\n", ""]);
 
 // exports
 
@@ -52435,6 +52442,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+//
+//
 //
 //
 //
@@ -53626,14 +53635,14 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("h3", [_vm._v("By: ")]),
-              _vm._v(" "),
               _c("h3", [
                 _vm.destacada
                   ? _c("div", [
                       _vm._v(
                         "\n                        " +
-                          _vm._s(_vm.destacada.user.name) +
+                          _vm._s(_vm.destacada.product.name) +
+                          ", " +
+                          _vm._s(_vm.destacada.product.marca) +
                           "\n                    "
                       )
                     ])
@@ -53641,21 +53650,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("h3", [_vm._v("Created at: ")]),
-              _vm._v(" "),
-              _c("h3", [
-                _vm.destacada
-                  ? _c("div", [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(_vm.getDate) +
-                          "     \n                    "
-                      )
-                    ])
-                  : _vm._e()
-              ])
-            ]),
+            _c("hr"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("h3", [
@@ -53673,7 +53668,7 @@ var render = function() {
                             "max-rating": 5,
                             "inactive-color": "#000",
                             "active-color": "#cc1166",
-                            "star-size": 50
+                            "star-size": 35
                           }
                         })
                       ],
@@ -53683,44 +53678,56 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "row" },
-              [
-                _c(
-                  "b-button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      to: {
-                        name: "newRecipe",
-                        params: { id: _vm.$route.params.id }
+            _c("div", { staticClass: "row" }, [
+              _c("h4", [_vm._v("Created at: ")]),
+              _vm._v(" "),
+              _c("h4", [
+                _vm.destacada
+                  ? _c("div", [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(_vm.getDate) +
+                          "     \n                    "
+                      )
+                    ])
+                  : _vm._e()
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "h6",
+                [
+                  _vm._v("Do you think you can get a better recipe?"),
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "newRecipe",
+                          params: { id: _vm.$route.params.id }
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("New recipe")]
-                )
-              ],
-              1
-            )
+                    },
+                    [_vm._v("Create a new recipe")]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ]
       )
-    : _c("div", { staticClass: "no-recipe" }, [
-        _c("h2", [
-          _vm._v(
-            "Aun no existen recetas de este producto. Se el primero en crear una."
-          )
-        ]),
-        _vm._v(" "),
+    : _c("div", { staticClass: "row row-gen" }, [
         _c(
-          "div",
-          { staticClass: "everyelem" },
+          "h2",
           [
+            _vm._v(
+              "There are still no recipes for this product. Be the first to "
+            ),
             _c(
-              "b-button",
+              "router-link",
               {
-                staticClass: "btn btn-primary ",
                 attrs: {
                   to: {
                     name: "newRecipe",
@@ -53728,11 +53735,13 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("New recipe")]
+              [_vm._v(" create one of them.")]
             )
           ],
           1
-        )
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "everyelem" })
       ])
 }
 var staticRenderFns = []
@@ -53979,7 +53988,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.recipes
+  return _vm.recipes.data.length > 0
     ? _c("div", [
         _c(
           "div",
@@ -54030,48 +54039,54 @@ var render = function() {
           })
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "row pagination" }, [
-          _c(
-            "div",
-            { staticClass: "everyelem" },
-            [
+        _vm.pagination
+          ? _c("div", { staticClass: "row pagination" }, [
               _c(
-                "b-button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.pagination.prev_pagination_disabled },
-                  on: {
-                    click: function($event) {
-                      _vm.prevPage()
-                    }
-                  }
-                },
-                [_vm._v("Prev")]
-              ),
-              _vm._v(
-                "\n            " +
-                  _vm._s(_vm.pagination.current_page) +
-                  " of " +
-                  _vm._s(_vm.pagination.last_page) +
-                  "\n            "
-              ),
-              _c(
-                "b-button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.pagination.next_pagination_disabled },
-                  on: {
-                    click: function($event) {
-                      _vm.nextPage()
-                    }
-                  }
-                },
-                [_vm._v("Next")]
+                "div",
+                { staticClass: "everyelem" },
+                [
+                  _c(
+                    "b-button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: {
+                        disabled: _vm.pagination.prev_pagination_disabled
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.prevPage()
+                        }
+                      }
+                    },
+                    [_vm._v("Prev")]
+                  ),
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.pagination.current_page) +
+                      " of " +
+                      _vm._s(_vm.pagination.last_page) +
+                      "\n            "
+                  ),
+                  _c(
+                    "b-button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: {
+                        disabled: _vm.pagination.next_pagination_disabled
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.nextPage()
+                        }
+                      }
+                    },
+                    [_vm._v("Next")]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          )
-        ])
+            ])
+          : _vm._e()
       ])
     : _vm._e()
 }
@@ -54319,8 +54334,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             commentbutton: false,
             handlike: false,
             handdislike: false,
-            positiveVotes: 12,
-            negativeVotes: 5,
+            positiveVotes: 0,
+            negativeVotes: 0,
             recipe: '',
             comments: [],
             img: 'https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg'
@@ -54332,12 +54347,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         like: function like() {
             if (this.handdislike == false && this.handlike == false) {
                 this.handlike = true;
+                this.recipe.votes_p = this.recipe.votes_p + 1;
                 console.log("has votado positivamente!");
             }
         },
         dislike: function dislike() {
             if (this.handlike == false && this.handdislike == false) {
                 this.handdislike = true;
+                this.recipe.votes_n = this.recipe.votes_n + 1;
                 console.log("has votado negativamente!");
             }
         },
@@ -54446,7 +54463,7 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          _vm._s(_vm.positiveVotes) +
+                          _vm._s(_vm.recipe.votes_p) +
                             "\n                        "
                         ),
                         _c("font-awesome-icon", {
@@ -54460,7 +54477,7 @@ var render = function() {
                           }
                         }),
                         _vm._v(
-                          _vm._s(_vm.negativeVotes) + "\n                    "
+                          _vm._s(_vm.recipe.votes_n) + "\n                    "
                         )
                       ],
                       1
@@ -56334,6 +56351,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         createProduct: function createProduct() {
+            var _this = this;
+
             var data = {
                 name: this.name,
                 marca: this.marca
@@ -56342,6 +56361,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var data = _ref.data;
 
                 console.log("producto creado");
+                _this.$router.push('/');
             });
         }
     }

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="recipes">
+    <div v-if="recipes.data.length>0">
         <div class="row row-gen ">
             <router-link tag="div" v-if="recipes.data[0]" class="col-lg-3 col-sm-6 borderh" v-for="(recipe,index) in recipes.data"  :key='index' :to="{name: 'recipe', params: { id : recipe.id}}">
                 <div class="row">
@@ -10,7 +10,7 @@
                 </div>
             </router-link>
         </div>
-        <div class="row pagination">
+        <div v-if="pagination" class="row pagination">
             <div class="everyelem">
                 <!--<b-pagination size="lg" @input="paginationP" :total-rows="pagination.total_r" v-model="pagination.current_page" :per-page="pagination.per_p">
                 </b-pagination>-->

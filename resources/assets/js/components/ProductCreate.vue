@@ -33,6 +33,7 @@ export default {
             axios.post('/api/products',data)
                     .then(({data}) => {
                         console.log("producto creado")
+                        this.$router.push('/');
                     })
                     
         }
